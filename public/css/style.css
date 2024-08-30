@@ -50,9 +50,10 @@ textarea {
     padding: 16px 32px;
     margin: 4px 2px;
     cursor: pointer;
-    height: 10px;
-    width: 25px;
-    /* text-align: center; */
+    /* height: 10px; */
+    max-width: 200px;
+    text-align: center;
+    font-size: var(--font-size-md);
 }
 
 img {
