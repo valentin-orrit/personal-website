@@ -58,12 +58,12 @@ body {
     border-radius: 50%;
     background: linear-gradient(to right, #D8E3FF, #F5E2FF, #FD98FF);
     opacity: 0.9;
-    filter: blur(2px);
+    filter: blur(1px);
 }
 
 .circle-1 {
     top: -10%;
-    left: 6%;
+    left: 13%;
     transform: scale(0.7);
 }
 
