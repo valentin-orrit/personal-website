@@ -5,7 +5,7 @@
 
 :root {
     --black: #3E3F40;
-    --gray: #33363F;
+    --gray: #696c74;
 
     --font-size-base: 1rem;
     --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
@@ -206,16 +206,16 @@ img {
 
 /* Projects button */
 .projects-btn .btn-text {
-    display: block;
+    display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
 
 .projects-btn:hover .btn-text {
-    animation: biggerText 4s alternate infinite ease-in-out;
+    animation: biggerText 2s alternate infinite ease-in-out;
 }
 
 @keyframes biggerText {
-    50% { transform: scale(1.07); }
+    to { transform: scale(1.03); }
 }
 
 .hero-image {
@@ -277,6 +277,33 @@ img {
 
 .mongoDB {
     width: calc(var(--icon-lg) + 45px);
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2px;
+   
+    width: 100%;
+    padding: 2px;
+    border-radius: 10px;
+    background: var(--black);
+    color: #fff;
+    text-align: center;
+ 
+    /* display: none; */
+}
+
+.tooltip:hover:before {
+    display: block;
 }
 
 /* Contact button */
