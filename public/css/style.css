@@ -44,8 +44,6 @@ body {
 
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly;
-    align-items: center; */
 }
 
 /* Background circles */
@@ -204,6 +202,20 @@ img {
     text-align: end;
     margin-top: 2rem;
     line-height: 1.45;
+}
+
+/* Projects button */
+.projects-btn .btn-text {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projects-btn:hover .btn-text {
+    animation: biggerText 4s alternate infinite ease-in-out;
+}
+
+@keyframes biggerText {
+    50% { transform: scale(1.07); }
 }
 
 .hero-image {
