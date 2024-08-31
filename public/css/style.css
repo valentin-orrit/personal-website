@@ -284,13 +284,19 @@ img {
     position: relative;
 }
 
+.tooltip:before,
+.tooltip:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    display: none;
+}
+
 .tooltip:before {
     content: attr(data-text);
-    position: absolute;
     top: 100%;
-    left: 50%;
     transform: translateX(-50%);
-    margin-top: 2px;
+    margin-top: 8px;
    
     width: 100%;
     padding: 2px;
@@ -298,11 +304,18 @@ img {
     background: var(--black);
     color: #fff;
     text-align: center;
- 
-    /* display: none; */
 }
 
-.tooltip:hover:before {
+.tooltip:after {
+    top: 100%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: var(--black);
+    margin-top: -4px;
+}
+
+.tooltip:hover:before,
+.tooltip:hover:after {
     display: block;
 }
 
