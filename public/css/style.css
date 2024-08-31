@@ -12,6 +12,9 @@
     --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
     --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
+    --icon-sm: 18px;
+    --icon-lg: 90px;
+
     --border-radius: 30px;
 
     /* Glass variables */
@@ -38,6 +41,11 @@ body {
     background: linear-gradient(160deg, #dcfeffad, #95eef2ad 20%, #7758fdad 100%);
     background-attachment: fixed;
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* Background circles */
@@ -125,10 +133,24 @@ textarea {
     font-size: var(--font-size-md);
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* Images */
 img {
     width: 100%;
     height: auto;
+}
+
+.glass-bg {
+    /* Glass */
+    border-radius: var(--border-radius);
+    background: var(--glass-color);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: var(--glass-border);
 }
 
 
@@ -141,6 +163,7 @@ img {
 
 .main {
     padding: 20px 0;
+    flex-grow: 1;
 }
 
 /* Hero */
@@ -154,18 +177,7 @@ img {
     width: 100%;
     height: 80%;
     margin: 38px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-    
-    /* Glass */
-    border-radius: var(--border-radius);
-    background: var(--glass-color);
-    box-shadow: var(--glass-shadow);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: blur(6.8px);
-    border: var(--glass-border)
+    z-index: -1;
 }
 
 .hero-content {
@@ -192,10 +204,43 @@ img {
 }
 
 .hero-image {
-    max-height: 500px;
+    max-height: 400px;
     max-width: 90%;
     filter: drop-shadow(0px 44px 34px rgba(0,0,0,0.25));
     overflow: hidden;
     border-radius: var(--border-radius);
 }
 
+
+/* tech stack */
+
+.tech-stack {
+    position: relative;
+    margin: 20px 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.tech-stack-glass-bg {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    margin: 32px 0px;
+    z-index: -1;
+}
+
+.tech-icons-list ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    z-index: 1;
+}
+
+.tech-icon {
+    width: var(--icon-lg);
+}
