@@ -174,9 +174,9 @@ img {
 
 .hero-glass-bg {
     position: absolute;
-    width: 100%;
+    width: 110%;
     height: 80%;
-    margin: 38px 10px;
+    margin: 38px -60px;
     z-index: -1;
 }
 
