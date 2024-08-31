@@ -69,7 +69,7 @@ body {
     background: linear-gradient(130deg, #D8E3FF, #F5E2FF, #FD98FF);
     opacity: 0.9;
     
-    animation: upDown 55s alternate infinite ease-in-out;
+    animation: upDown 65s alternate infinite ease-in-out;
 }
 
 /* Circle animation */
@@ -179,7 +179,6 @@ img {
     position: absolute;
     width: 110%;
     height: 80%;
-    background-size: cover;
     z-index: -1;
 }
 
@@ -188,7 +187,6 @@ img {
     flex-direction: row;
     z-index: 1;
 }
-
 
 .left-side {
     display: flex;
@@ -226,23 +224,32 @@ img {
     align-items: space-evenly;
 }
 
+.tech-stack-text {
+    font-size: var(--font-size-md);
+}
+
 .tech-stack-glass-bg {
     position: absolute;
-    width: 100%;
-    height: 80%;
-    margin: 32px 0px;
+    width: 110%;
+    height: 50%;
     z-index: -1;
 }
+
 
 .tech-icons-list ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin: auto;
+    margin: 0 10px;
+    padding: 0 10px;
     z-index: 1;
 }
 
 .tech-icon {
     width: var(--icon-lg);
+}
+
+.rails {
+    width: calc(var(--icon-lg) - 50px);
 }
