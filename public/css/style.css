@@ -47,7 +47,9 @@ body {
     flex-direction: column;
 }
 
-/* Background circles */
+/* 
+    Background circles 
+*/
 .circles-bg {
     position: fixed;
     top: 0;
@@ -102,7 +104,9 @@ body {
 }
 
 
-/* Text */
+/* 
+    Text 
+*/
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -161,7 +165,9 @@ img {
 }
 
 
-/* Layout */
+/* 
+    Layout 
+*/
 .container {
     max-width: 982px;
     min-height: 100vh;
@@ -172,11 +178,13 @@ img {
 }
 
 .main {
-    padding: 20px 0;
+    padding: 70px 0;
     flex-grow: 1;
 }
 
-/* Hero */
+/* 
+    Hero 
+*/
 .hero {
     position: relative;
     width: 100%;
@@ -238,7 +246,9 @@ img {
 }
 
 
-/* tech stack */
+/* 
+    tech stack 
+*/
 .tech-stack {
     position: relative;
     display: flex;
@@ -372,8 +382,8 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
-    margin-bottom: 100px;
+    padding: 15px 10px;
+
 }
 
 .header-logo {
@@ -407,4 +417,16 @@ img {
 
 .contact-link:hover {
     color: #F5E2FF;
+}
+
+/* 
+    Footer
+*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
 }
