@@ -125,7 +125,7 @@ textarea {
     border: none;
     border-radius: var(--border-radius);
     text-decoration: none;
-    padding: 16px 32px;
+    padding: 10px 20px;
     margin: 4px 2px;
     cursor: pointer;
     max-width: 200px;
@@ -262,4 +262,23 @@ img {
 
 .mongoDB {
     width: calc(var(--icon-lg) + 45px);
+}
+
+/* Contact button */
+.contact {
+    display: flex;
+    justify-content: end;
+    width: 110%;
+}
+
+.contact-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-icon {
+    margin-top: 4px;
+    margin-right: -4px;
 }
