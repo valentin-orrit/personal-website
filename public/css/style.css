@@ -5,7 +5,7 @@
 
 :root {
     --black: #3E3F40;
-    --gray: #565a64;
+    --gray: #6c707a;
 
     --font-size-base: 1rem;
     --font-size-sm: clamp(0.75rem, 0.50vw + 0.8rem, 0.90rem);
@@ -116,6 +116,15 @@ textarea {
     margin-bottom: 1rem;
 }
 
+/* Links */
+a  {
+    color: inherit;
+}
+
+a:hover {
+    color: var(--gray);
+}
+
 /* Buttons */
 .btn {
     background-color: #fff;
@@ -174,6 +183,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .hero-glass-bg {
@@ -351,4 +361,50 @@ img {
 
 @keyframes bigger {
     to { transform: scale(1.15);}
+}
+
+/* 
+    header
+*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 100px;
+}
+
+.header-logo {
+    text-decoration: none;
+    font-size: var(--font-size-md);
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+}
+
+.header-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;      
+}
+
+.header-list li {
+    margin: 0 10px;
+}
+
+.header-list li a {
+    text-decoration: none;
+}
+
+.contact-link {
+    color: #fff;
+}
+
+.contact-link:hover {
+    color: #F5E2FF;
 }
