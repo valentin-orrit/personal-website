@@ -5,9 +5,10 @@
 
 :root {
     --black: #3E3F40;
-    --gray: #696c74;
+    --gray: #565a64;
 
     --font-size-base: 1rem;
+    --font-size-sm: clamp(0.75rem, 0.50vw + 0.8rem, 0.90rem);
     --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
     --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
     --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
@@ -282,6 +283,7 @@ img {
 /* Tooltips */
 .tooltip {
     position: relative;
+    display: inline-block;
 }
 
 .tooltip:before,
@@ -297,13 +299,16 @@ img {
     top: 100%;
     transform: translateX(-50%);
     margin-top: 8px;
-   
-    width: 100%;
-    padding: 2px;
+    width: max-content;
+    max-width: 200px;
+    padding: 6px 10px;
     border-radius: 10px;
     background: var(--black);
     color: #fff;
     text-align: center;
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    white-space: nowrap;
 }
 
 .tooltip:after {
