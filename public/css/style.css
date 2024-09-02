@@ -170,6 +170,11 @@ a:hover {
     color: var(--gray);
 }
 
+/* Titles */
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+
 /* Buttons */
 .btn {
     background-color: #fff;
