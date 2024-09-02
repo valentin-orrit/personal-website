@@ -72,9 +72,25 @@ body {
     animation: upDown 65s alternate infinite ease-in-out;
 }
 
+.far-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(130deg, #D8E3FF, #F5E2FF, #FD98FF);
+    opacity: 0.5;
+    filter: blur(10px);
+
+    animation: downUp 65s alternate infinite ease-in-out;
+}
+
 /* Circle animation */
 @keyframes upDown {
     to { transform: translatey(700px);}
+}
+
+@keyframes downUp {
+    to { transform: translatey(-500px);}
 }
 
 
@@ -103,6 +119,29 @@ body {
     filter: blur(5px);
 }
 
+.far-circle-1 {
+    top: 25%;
+    left: 10%;
+    transform: scale(0.7);
+}
+
+.far-circle-2 {
+    top: 55%;
+    left: 40%;
+    transform: scale(1.8);
+}
+
+.far-circle-3 {
+    top: 10%;
+    left: 60%;
+    transform: scale(1);
+}
+
+.far-circle-4 {
+    top: 110%;
+    left: 60%;
+    transform: scale(1.5);
+}
 
 /* 
     Text 
