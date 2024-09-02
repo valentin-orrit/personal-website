@@ -391,7 +391,7 @@ img {
 /* Contact button */
 .contact {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     width: 95%;
     margin-top: 10px;
 }
@@ -508,5 +508,9 @@ img {
     .hero-text {
         text-align: end;
         margin-top: 2rem;
+    }
+
+    .contact {
+        justify-content: end;
     }
 }
