@@ -358,11 +358,11 @@ img {
 }
 
 .rails {
-    width: calc(var(--icon-lg) - 25px);
+    height: calc(var(--icon-lg) - 7px);
 }
 
 .mongoDB {
-    width: calc(var(--icon-lg) + 45px);
+    height: calc(var(--icon-lg) + 50px);
 }
 
 /* Tooltips */
