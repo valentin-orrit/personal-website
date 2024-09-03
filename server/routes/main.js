@@ -24,8 +24,14 @@ router.get('/portfolio', (req, res) => {
 /**
  * GET /logbook
 */
-router.get('/logbook', (req, res) => {
-    res.render('logbook')
+router.get('/logbook', async (req, res) => {
+    try {
+        const data = await Post.find()
+        res.render('logbook', { data })
+    } catch (error) {
+        console.log(error)
+    }
+    
 })
 
 /**

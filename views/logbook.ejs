@@ -2,18 +2,15 @@
     <h2 class="log-heading">latest logs</h2>
 
     <ul class="log-ul">
-        <li>
-            <a href="#">
-                <span>log title 1</span>
-                <span class="log-list-date">date</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span>log title 2</span>
-                <span class="log-list-date">date2</span>
-            </a>
-        </li>
+        <% data.forEach(log => { %>
+            <li>
+                <a href="/log/<%= log._id %>">
+                    <span><%= log.title %></span>
+                    <span class="log-list-date"><%= log.createdAt.toDateString() %></span>
+                </a>
+            </li>
+         
+        <% }) %>
     </ul>
 
     <a href="#" class="pagination">&lt; view older logs</a>
