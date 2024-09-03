@@ -509,6 +509,49 @@ img {
     padding-bottom: 10px;
 }
 
+/* 
+    logbook
+*/
+
+/* .log-heading {
+    margin-top: 4rem;
+} */
+
+.log-ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-size-md);
+}
+
+.log-list-date {
+    font-size: var(--font-size-base);
+    color: var(--gray);
+    width: 260px;
+    display: inline-block;
+}
+
+.log-ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.pagination {
+    font-size: var(--font-size-sm);
+    color: var(--gray);
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.pagination:hover {
+    color: var(--black);
+}
 
 
 /* Responsive */
@@ -571,9 +614,17 @@ img {
         width: var(--icon-lg);
     }
     
-
     .contact {
         justify-content: end;
         margin-top: 10px;
+    }
+
+    .log-ul li a {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .log-list-date {
+        text-align: right;
     }
 }
