@@ -4,9 +4,7 @@ const Post = require('../models/Post')
 
 /**
  * GET / 
- * HOME
- */
-
+*/
 router.get('', (req, res) => {
     const locals = {
         title: 'valentin orrit',
@@ -16,25 +14,23 @@ router.get('', (req, res) => {
     res.render('index', { locals })
 })
 
-function insertPostData () {
-    Post.insertMany([
-        {
-            title: 'Building a logbook',
-            body: 'This is the body text'
-        },
-        {
-            title: 'another one',
-            body: 'its another post'
-        },
-        {
-            title: 'another oneeeee',
-            body: 'its another postssss'
-        }
-    ])
-}
-insertPostData()
+/**
+ * GET /portfolio
+*/
+router.get('/portfolio', (req, res) => {
+    res.render('portfolio')
+})
 
+/**
+ * GET /logbook
+*/
+router.get('/logbook', (req, res) => {
+    res.render('logbook')
+})
 
+/**
+ * GET /contact
+*/
 router.get('/contact', (req, res) => {
     res.render('contact')
 })
