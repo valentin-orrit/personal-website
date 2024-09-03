@@ -26,14 +26,26 @@ router.get('/portfolio', (req, res) => {
 */
 router.get('/logbook', async (req, res) => {
     try {
-        // let perPage = 10
-        // let page = req.query.page || 1
+        let perPage = 10
+        let page = req.query.page || 1
 
-        // const data = await 
+        const data = await Log.aggregate([ { $sort: { createdAt: -1 } } ])
+        .skip(perPage * page - perPage)
+        .limit(perPage)
+        .exec()
 
+        const count = await Log.countDocuments()
+        const nextPage = parseInt(page) + 1
+        const hasNextPage = nextPage <= Math.ceil(count / perPage)
 
-        const data = await Log.find()
-        res.render('logbook', { data })
+        res.render('logbook', {
+            data,
+            current: page,
+            nextPage: hasNextPage ? nextPage : null
+        })
+
+        // const data = await Log.find()
+        // res.render('logbook', { data })
     } catch (error) {
         console.log(error)
     }
