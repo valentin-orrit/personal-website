@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Post = require('../models/Post')
+const Log = require('../models/Log')
 
 /**
  * GET / 
@@ -26,7 +26,13 @@ router.get('/portfolio', (req, res) => {
 */
 router.get('/logbook', async (req, res) => {
     try {
-        const data = await Post.find()
+        // let perPage = 10
+        // let page = req.query.page || 1
+
+        // const data = await 
+
+
+        const data = await Log.find()
         res.render('logbook', { data })
     } catch (error) {
         console.log(error)

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const PostSchema = new Schema({
+const LogSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ const PostSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Post', PostSchema)
+module.exports = mongoose.model('Log', LogSchema)
