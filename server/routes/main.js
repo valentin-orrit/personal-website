@@ -56,7 +56,8 @@ router.get('/log/:id', async (req, res) => {
         let slug = req.params.id
 
         const data = await Log.findById({ _id: slug })
-        res.render('log', { data })
+        const logLocals = locals.getLogLocals(data)
+        res.render('log', { locals: logLocals, data })
     } catch (error) {
         
     }

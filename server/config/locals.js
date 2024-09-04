@@ -14,7 +14,15 @@ const locals = {
     contact: {
         title: 'contact - valentin orrit',
         description: 'hit me up!'
-    }
+    },
+
+    // Get individual locals for each log entry
+    getLogLocals: function(data) {
+        return {
+            title: `${data.title} - valentin orrit`,
+            description: data.body.substring(0, 160) + '...'
+        };
+    }    
 };
 
 module.exports = locals;
