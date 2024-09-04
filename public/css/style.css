@@ -512,11 +512,6 @@ img {
 /* 
     logbook
 */
-
-/* .log-heading {
-    margin-top: 4rem;
-} */
-
 .log-ul {
     display: flex;
     flex-direction: column;

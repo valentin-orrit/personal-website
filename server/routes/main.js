@@ -2,14 +2,17 @@ const express = require('express')
 const router = express.Router()
 const Log = require('../models/Log')
 
+
+// title + description
+const locals = {
+    title: 'valentin orrit',
+    description: 'Personal website with portfolio and simple blog, created with Nodejs, Express & MongoDB'
+}
+
 /**
  * GET / 
 */
 router.get('', (req, res) => {
-    const locals = {
-        title: 'valentin orrit',
-        description: 'Personal website with portfolio and simple blog, created with Nodejs, Express & MongoDB'
-    }
     
     res.render('index', { locals })
 })
@@ -18,7 +21,7 @@ router.get('', (req, res) => {
  * GET /portfolio
 */
 router.get('/portfolio', (req, res) => {
-    res.render('portfolio')
+    res.render('portfolio', { locals })
 })
 
 /**
