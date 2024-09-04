@@ -44,13 +44,26 @@ router.get('/logbook', async (req, res) => {
             nextPage: hasNextPage ? nextPage : null
         })
 
-        // const data = await Log.find()
-        // res.render('logbook', { data })
     } catch (error) {
         console.log(error)
     }
     
 })
+
+/**
+ * GET /log
+*/
+router.get('/log/:id', async (req, res) => {
+    try {
+        let slug = req.params.id
+
+        const data = await Log.findById({ _id: slug })
+        res.render('log', { data })
+    } catch (error) {
+        
+    }
+})
+
 
 /**
  * GET /contact
