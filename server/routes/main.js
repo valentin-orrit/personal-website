@@ -1,27 +1,21 @@
 const express = require('express')
 const router = express.Router()
 const Log = require('../models/Log')
-
-
-// title + description
-const locals = {
-    title: 'valentin orrit',
-    description: 'Personal website with portfolio and simple blog, created with Nodejs, Express & MongoDB'
-}
+const locals = require('../config/locals')
 
 /**
  * GET / 
 */
 router.get('', (req, res) => {
     
-    res.render('index', { locals })
+    res.render('index', { locals: locals.index })
 })
 
 /**
  * GET /portfolio
 */
 router.get('/portfolio', (req, res) => {
-    res.render('portfolio', { locals })
+    res.render('portfolio', { locals: locals.portfolio })
 })
 
 /**
@@ -42,6 +36,7 @@ router.get('/logbook', async (req, res) => {
         const hasNextPage = nextPage <= Math.ceil(count / perPage)
 
         res.render('logbook', {
+            locals: locals.logbook,
             data,
             current: page,
             nextPage: hasNextPage ? nextPage : null
@@ -72,7 +67,7 @@ router.get('/log/:id', async (req, res) => {
  * GET /contact
 */
 router.get('/contact', (req, res) => {
-    res.render('contact')
+    res.render('contact', { locals: locals.contact })
 })
 
 module.exports = router
