@@ -1,5 +1,15 @@
 
 <div class="login">
-    
-    <button class="btn login-btn" type="button"><a href="/contact">login</a></button>
+    <h2>login</h2>
+    <form action="/admin" method="POST">
+        <div class="form fields">
+            <label for="username"><b>username</b></label>
+            <input type="text" placeholder="username" name="username">
+        
+            <label for="password"><b>password</b></label>
+            <input type="password" placeholder="password" name="password">
+        </div>
+
+        <input type="submit" value="login" class="btn login-btn">
+    </form>
 </div>
