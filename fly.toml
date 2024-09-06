@@ -6,6 +6,9 @@
 app = 'personal-website-shy-breeze-339'
 primary_region = 'cdg'
 
+[env]
+  NODE_ENV = "production"
+
 [build]
 
 [http_service]
