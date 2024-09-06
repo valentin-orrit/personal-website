@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const locals = require('../config/locals')
 const Log = require('../models/Log')
+const User = require('../models/User')
 
 const adminLayout = '../views/layouts/admin'
 
