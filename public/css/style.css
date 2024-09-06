@@ -563,6 +563,13 @@ img {
     align-items: center;
 }
 
+.login-glass-bg {
+    position: absolute;
+    min-width: 20rem;
+    min-height: 25rem;
+    z-index: -1;
+}
+
 
 /* Responsive */
 @media only screen and (min-width: 515px) {
