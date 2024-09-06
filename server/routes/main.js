@@ -59,7 +59,7 @@ router.get('/log/:id', async (req, res) => {
         const logLocals = locals.getLogLocals(data)
         res.render('log', { locals: logLocals, data })
     } catch (error) {
-        
+        console.log(error)
     }
 })
 
