@@ -500,7 +500,6 @@ img {
 /* 
     Footer
 */
-
 .footer {
     display: flex;
     flex-direction: column;
@@ -546,6 +545,14 @@ img {
 
 .pagination:hover {
     color: var(--black);
+}
+
+/*
+    ADMIN
+*/
+/* login page */
+.login {
+    
 }
 
 
