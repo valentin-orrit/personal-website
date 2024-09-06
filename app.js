@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const expressLayout = require('express-ejs-layouts')
+const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const MongoStore = require('connect-mongo')
 
@@ -20,7 +21,7 @@ app.use(cookieParser())
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUnitiliazed: true,
+    saveUninitiliazed: true,
     store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI
     })
