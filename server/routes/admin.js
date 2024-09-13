@@ -9,6 +9,26 @@ const jwt = require('jsonwebtoken')
 const adminLayout = '../views/layouts/admin'
 const jwtSecret = process.env.JWT_SECRET
 
+
+/**
+ * Check Login 
+*/
+const authMiddleware = (req, res, next) => {
+    const token = req.cookies.token
+
+    if(!token) {
+        return res.redirect('/unauthorized')
+    }
+
+    try {
+        const decoded = jwt.verify(token, jwtSecret)
+        req.userId = decoded.userId
+        next()
+    } catch (error) {
+        return res.redirect('/unauthorized')     
+    }
+}
+
 /**
  * GET /admin login
 */
@@ -54,8 +74,15 @@ router.post('/admin', async (req, res) => {
 /**
  * POST /admin dashboard 
 */
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', authMiddleware, async (req, res) => {
     res.render('admin/dashboard')
+})
+
+/**
+ * POST /admin unauthorized 
+*/
+router.get('/unauthorized', async (req, res) => {
+    res.render('admin/unauthorized')
 })
 
 
