@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const adminLayout = '../views/layouts/admin'
+const jwtSecret = process.env.JWT_SECRET
 
 /**
  * GET /admin login
@@ -24,13 +25,39 @@ router.get('/admin', async (req, res) => {
 */
 router.post('/admin', async (req, res) => {
     try {
-        const { username, password} = req.body
+        const { username, password } = req.body
+        console.log('Received credentials:', { username, password })
 
-        res.render('admin/login', { locals: locals.adminLogin, layout: adminLayout })
+        const user = await User.findOne( { username } )
+
+        if(!user) {
+            return res.status(401).json({ message: 'Invalid credentials' })
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password)
+
+        if(!isPasswordValid) {
+            return res.status(401).json({ message: 'Invalid credentials' })            
+        }
+
+        const token = jwt.sign({ userId: user._id }, jwtSecret)
+        res.cookie('token', token, { httpOnly: true })
+
+        res.redirect('/dashboard')
+
+        // res.render('admin/login', { locals: locals.adminLogin, layout: adminLayout })
     } catch (error) {
         console.log(error)
     }
 })
+
+/**
+ * POST /admin dashboard 
+*/
+router.get('/dashboard', async (req, res) => {
+    res.render('admin/dashboard')
+})
+
 
 /**
  * POST /admin register 

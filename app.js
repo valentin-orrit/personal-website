@@ -17,11 +17,12 @@ connectDB()
 app.use(express.static('public'))
 app.use(express.json())
 app.use(cookieParser())
+app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitiliazed: true,
+    saveUninitialized: true,
     store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI
     })
