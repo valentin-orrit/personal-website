@@ -75,7 +75,14 @@ router.post('/admin', async (req, res) => {
  * POST /admin dashboard 
 */
 router.get('/dashboard', authMiddleware, async (req, res) => {
-    res.render('admin/dashboard')
+    
+    try {
+        const data = await Log.find()
+        res.render('admin/dashboard', {locals: locals.adminDashboard, data})
+    } catch (error) {
+        console.log(error)        
+    }
+    
 })
 
 /**

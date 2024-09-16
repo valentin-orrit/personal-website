@@ -1,1 +1,22 @@
-Dashboard
+<div class="admin-dashboard">
+    <div class="admin-title">
+        <h2>logs</h2>
+        <a href="/add-log" class="button btn">+ add new</a>
+    </div>
+    <ul class="admin-log-ul">
+        <% data.forEach(log => { %>
+            <li>
+                <a href="/log/<%= log._id %>">
+                    <span><%= log.title %> &nearr;</span>
+                </a>
+                <div class="admin-log-controls">
+                    <a href="/edit-log/<%= log._id %>" class="btn">edit</a>
+                    <form action="/delete-log/<% data._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete" class="btn-danger btn"></input>
+                    </form>
+                </div>
+            </li>
+         
+        <% }) %>
+    </ul>
+</div>
