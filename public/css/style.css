@@ -582,6 +582,12 @@ img {
     z-index: -1;
 }
 
+.logged-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Dashboard */
 .admin-title {
     display: flex;
