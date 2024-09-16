@@ -10,10 +10,14 @@
                     <span><%= log.title %> &nearr;</span>
                 </a>
                 <div class="admin-log-controls">
-                    <a href="/edit-log/<%= log._id %>" class="btn">edit</a>
-                    <form action="/delete-log/<% data._id %>?_method=DELETE" method="POST">
-                        <input type="submit" value="Delete" class="btn-danger btn"></input>
-                    </form>
+                    <div class="log-controls-btn">
+                        <a href="/edit-log/<%= log._id %>" class="btn">edit</a>
+                    </div>
+                    <div class="log-controls-btn">
+                        <form action="/delete-log/<% data._id %>?_method=DELETE" method="POST">
+                            <input type="submit" value="delete" class="btn btn-danger"></input>
+                        </form>
+                    </div>
                 </div>
             </li>
          

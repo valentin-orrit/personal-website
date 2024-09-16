@@ -609,6 +609,16 @@ img {
 .admin-log-controls {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-controls-btn {
+    margin: 0 5px;
+}
+
+.log-controls-btn input {
+    padding: 15px 20px;
 }
 
 
@@ -688,11 +698,8 @@ img {
     }
 
     .admin-log-ul li {
-        margin: 10px;
-        font-size: var(--font-size-md);
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: start;
+        align-items: center;
     }
 }

@@ -34,24 +34,20 @@ const authMiddleware = (req, res, next) => {
 */
 router.get('/admin', async (req, res) => {
     try {
-        const token = req.cookies.token;
+        const token = req.cookies.token
         if (token) {
-            // Verify token
-            jwt.verify(token, jwtSecret, (err, decoded) => {
-                if (err) {
-                    // Invalid token, render login form
-                    return res.render('admin/login', { locals: locals.adminLogin, layout: adminLayout });
+            jwt.verify(token, jwtSecret, (error, decoded) => {
+                if (error) {
+                    return res.render('admin/login', { locals: locals.adminLogin, layout: adminLayout })
                 } else {
-                    // Valid token, admin is already logged in
-                    return res.render('admin/loggedin', { message: 'Admin Already Logged In', layout: adminLayout });
+                    return res.render('admin/loggedin', { message: 'Admin Already Logged In', layout: adminLayout })
                 }
-            });
+            })
         } else {
-            // No token, render login form
-            res.render('admin/login', { locals: locals.adminLogin, layout: adminLayout });
+            res.render('admin/login', { locals: locals.adminLogin, layout: adminLayout })
         }
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 })
 
