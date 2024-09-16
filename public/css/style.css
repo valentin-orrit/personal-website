@@ -82,7 +82,7 @@ body {
     opacity: 0.5;
     filter: blur(10px);
 
-    animation: downUp 65s alternate infinite ease-in-out;
+    animation: downUp 45s alternate infinite ease-in-out;
 }
 
 /* Circle animation */
@@ -105,12 +105,14 @@ body {
     top: 80%;
     left: 5%;
     transform: scale(2.3);
+    animation-duration: 50s;
 }
 
 .circle-3 {
     top: 35%;
     left: 75%;
     transform: scale(1.3);
+    animation-duration: 59s;
 }
 
 .circle-4 {
@@ -118,6 +120,7 @@ body {
     left: 53%;
     transform: scale(2.9);
     filter: blur(5px);
+    animation-delay: 3s;
 }
 
 .far-circle-1 {
@@ -130,18 +133,21 @@ body {
     top: 55%;
     left: 40%;
     transform: scale(1.8);
+    animation-delay: 5s;
 }
 
 .far-circle-3 {
     top: 10%;
     left: 60%;
     transform: scale(1);
+    animation-delay: 2s;
 }
 
 .far-circle-4 {
     top: 110%;
     left: 60%;
     transform: scale(1.5);
+    animation-delay: 1s;
 }
 
 /* 
