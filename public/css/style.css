@@ -68,8 +68,8 @@ body {
     height: 300px;
     border-radius: 50%;
     background: linear-gradient(130deg, #D8E3FF, #F5E2FF, #FD98FF);
-    opacity: 0.9;
-    
+    /* opacity: 0.9; */
+    z-index: -10;
     animation: upDown 65s alternate infinite ease-in-out;
 }
 
@@ -79,8 +79,9 @@ body {
     height: 100px;
     border-radius: 50%;
     background: linear-gradient(130deg, #D8E3FF, #F5E2FF, #FD98FF);
-    opacity: 0.5;
-    filter: blur(10px);
+    /* opacity: 0.5; */
+    filter: blur(8px);
+    z-index: -100;
 
     animation: downUp 45s alternate infinite ease-in-out;
 }
@@ -594,9 +595,9 @@ img {
     margin: 10px;
     font-size: var(--font-size-md);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .admin-log-controls {
@@ -678,5 +679,14 @@ img {
 
     .log-list-date {
         text-align: right;
+    }
+
+    .admin-log-ul li {
+        margin: 10px;
+        font-size: var(--font-size-md);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
     }
 }
