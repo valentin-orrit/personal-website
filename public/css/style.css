@@ -203,6 +203,10 @@ h3 { font-size: var(--font-size-md); }
     color: #fff;
 }
 
+.btn-danger:hover {
+    background-color: #ff4545;
+}
+
 ul {
     list-style-type: none;
 }
@@ -559,6 +563,10 @@ img {
     color: var(--black);
 }
 
+.log-content.glass-bg {
+    padding: 20px 40px 60px 40px;
+}
+
 /*
     ADMIN
 */
@@ -624,11 +632,6 @@ img {
 .log-controls-btn {
     margin: 0 5px;
 }
-
-.log-controls-btn input {
-    padding: 15px 20px;
-}
-
 
 
 /* Responsive */
@@ -703,6 +706,12 @@ img {
 
     .log-list-date {
         text-align: right;
+    }
+    .admin-title {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 30px;
     }
 
     .admin-log-ul li {
