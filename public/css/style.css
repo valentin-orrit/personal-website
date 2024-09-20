@@ -238,6 +238,7 @@ img {
     flex-direction: column;
     margin: 0 auto;
     padding: 0 10px;
+    flex-grow: 1;
 }
 
 .main {

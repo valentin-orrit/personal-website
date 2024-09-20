@@ -1,0 +1,21 @@
+<div class="add-edit-log"></div>
+    <a href="/dashboard">&larr; Back to dashboard</a>
+    
+    <div class="admin-title">
+        <h2>edit log</h2>
+        <form action="/delete-log/<% data._id %>?_method=DELETE" method="POST">
+            <button type="submit" value="delete" class="btn btn-danger">delete</button>
+            <!-- <input type="submit" value="delete" class="btn btn-danger"></input> -->
+        </form>
+    </div>
+
+    <form action="/edit-log/<%= data._id %>?_method=PUT" method="POST">
+        <label for="title"><b>title</b></label>
+        <input type="text" placeholder="log title" name="title" value="<%= data.title %>">
+
+        <label for="body"><b>content</b></label>
+        <textarea name="body" cols="50" rows="10"><%= data.body %></textarea>
+
+        <input type="submit" value="update" class="btn">
+    </form>
+</div>

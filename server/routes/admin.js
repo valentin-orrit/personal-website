@@ -131,8 +131,39 @@ router.post('/add-log', authMiddleware, async (req, res) => {
         console.log(error)        
     }
 })
-    
 
+/**
+ * GET /admin - edit log
+*/
+router.get('/edit-log/:id', authMiddleware, async (req, res) => {
+    try {
+        const data = await Log.findOne({ _id: req.params.id })
+
+        res.render('admin/edit-log', { data })
+
+    } catch (error) {
+        console.log(error)        
+    }
+})
+
+/**
+ * PUT /admin - edit log
+*/
+router.put('/edit-log/:id', authMiddleware, async (req, res) => {
+    try {
+        await Log.findByIdAndUpdate(req.params.id, {
+            title: req.body.title,
+            body: req.body.body,
+            updatedAt: Date.now()
+        })
+
+        res.redirect(`/log/${req.params.id}`)
+
+    } catch (error) {
+        console.log(error)        
+    }
+})
+    
 
 /**
  * POST /admin unauthorized 
