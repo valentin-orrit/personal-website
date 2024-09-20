@@ -11,6 +11,10 @@ const LogSchema = new Schema({
         type: String,
         required: true
     },
+    bodyHtml: {  // Add this field
+        type: String,
+        required: true
+    },
     createdAt : {
         type: Date,
         default: Date.now

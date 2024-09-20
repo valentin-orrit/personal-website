@@ -5,6 +5,7 @@ const Log = require('../models/Log')
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const { marked } = require('marked')
 
 const adminLayout = '../views/layouts/admin'
 const jwtSecret = process.env.JWT_SECRET
@@ -113,19 +114,14 @@ router.get('/add-log', authMiddleware, async (req, res) => {
 */
 router.post('/add-log', authMiddleware, async (req, res) => {
     try {
+        const newLog = new Log({
+            title: req.body.title,
+            body: req.body.body,
+            bodyHtml: marked(req.body.body)
+        })
 
-        try {
-            const newLog = new Log({
-                title: req.body.title,
-                body: req.body.body
-            })
-
-            await Log.create(newLog)
-            res.redirect('/dashboard')
-
-        } catch (error) {
-            console.log(error)            
-        }
+        await Log.create(newLog)
+        res.redirect('/dashboard')
 
     } catch (error) {
         console.log(error)        
@@ -154,6 +150,7 @@ router.put('/edit-log/:id', authMiddleware, async (req, res) => {
         await Log.findByIdAndUpdate(req.params.id, {
             title: req.body.title,
             body: req.body.body,
+            bodyHtml: marked(req.body.body),
             updatedAt: Date.now()
         })
 
