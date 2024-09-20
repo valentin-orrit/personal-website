@@ -101,13 +101,37 @@ router.get('/dashboard', authMiddleware, async (req, res) => {
 router.get('/add-log', authMiddleware, async (req, res) => {
     
     try {
-        const data = await Log.find()
         res.render('admin/add-log', {locals: locals.adminAddLog, layout: adminLayout })
     } catch (error) {
         console.log(error)        
     }
     
 })
+
+/**
+ * POST /admin - create new log
+*/
+router.post('/add-log', authMiddleware, async (req, res) => {
+    try {
+
+        try {
+            const newLog = new Log({
+                title: req.body.title,
+                body: req.body.body
+            })
+
+            await Log.create(newLog)
+            res.redirect('/dashboard')
+
+        } catch (error) {
+            console.log(error)            
+        }
+
+    } catch (error) {
+        console.log(error)        
+    }
+})
+    
 
 
 /**
