@@ -589,6 +589,14 @@ img {
 }
 
 /* Dashboard */
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+}
+
 .admin-title {
     display: flex;
     flex-direction: column;
@@ -602,8 +610,8 @@ img {
     font-size: var(--font-size-md);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
 
 .admin-log-controls {

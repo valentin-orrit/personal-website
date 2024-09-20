@@ -23,6 +23,10 @@ const locals = {
         title: 'dashboard - valentin orrit',
         description: 'the admin dashboard page'
     },
+    adminAddLog: {
+        title: 'add log - valentin orrit',
+        description: 'add a new log'
+    },
 
     // Get individual locals for each log entry
     getLogLocals: function(data) {

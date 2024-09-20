@@ -82,18 +82,33 @@ router.post('/admin', async (req, res) => {
 })
 
 /**
- * POST /admin dashboard 
+ * GET /admin - dashboard 
 */
 router.get('/dashboard', authMiddleware, async (req, res) => {
     
     try {
         const data = await Log.find()
-        res.render('admin/dashboard', {locals: locals.adminDashboard, data})
+        res.render('admin/dashboard', {locals: locals.adminDashboard, data, layout: adminLayout })
     } catch (error) {
         console.log(error)        
     }
     
 })
+
+/**
+ * GET /admin - create new log
+*/
+router.get('/add-log', authMiddleware, async (req, res) => {
+    
+    try {
+        const data = await Log.find()
+        res.render('admin/add-log', {locals: locals.adminAddLog, layout: adminLayout })
+    } catch (error) {
+        console.log(error)        
+    }
+    
+})
+
 
 /**
  * POST /admin unauthorized 
