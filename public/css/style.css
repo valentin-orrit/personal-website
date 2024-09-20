@@ -568,6 +568,11 @@ img {
     padding: 20px 40px 60px 40px;
 }
 
+.log-content a {
+    color: #ac58d3;
+    font-weight: bold;
+}
+
 /*
     ADMIN
 */
