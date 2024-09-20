@@ -163,6 +163,18 @@ router.put('/edit-log/:id', authMiddleware, async (req, res) => {
         console.log(error)        
     }
 })
+
+/**
+ * DELETE /admin - delete log
+*/
+router.delete('/delete-log/:id', authMiddleware, async (req, res) => {
+    try {
+        await Log.deleteOne( { _id: req.params.id })
+        res.redirect('/dashboard')
+    } catch (error) {
+        console.log(error)        
+    }
+})
     
 
 /**
