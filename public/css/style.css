@@ -594,6 +594,13 @@ img {
     padding: 20px 40px;
 }
 
+.captcha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .contact-send-btn {
     display: flex;
     flex-direction: row;

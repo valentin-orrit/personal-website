@@ -69,7 +69,7 @@ router.get('/log/:id', async (req, res) => {
  * GET /contact
 */
 router.get('/contact', (req, res) => {
-    res.render('contact', { locals: locals.contact })
+    res.render('contact', { locals: locals.contact, siteKey: process.env.GOOGLE_CAPTCHA_SITE_KEY })
 })
 
 /**

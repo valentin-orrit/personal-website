@@ -18,8 +18,12 @@
             
                 <label for="message"><b>message</b></label>
                 <textarea name="message" placeholder="say hi!" cols="30" rows="7" id="message"></textarea>
+
+                <div class="captcha">
+                    <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
+                </div>
             </div>
-            
+
             <div class="contact-send-btn">
                 <input type="submit" value="send" class="btn">
             </div>
@@ -28,4 +32,4 @@
 </div>
 
 <script src="../server/mailer/send-email.js"></script>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
