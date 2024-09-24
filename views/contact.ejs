@@ -6,24 +6,23 @@
     
     <div class="contact-form">
         <form action="/send-email" method="POST">
-
-        <div class="contact-inside-form glass-bg">
-            <label for="name"><b>name</b></label>
-            <input type="text" placeholder="your name" name="name">
-        
-            <label for="email"><b>email</b></label>
-            <input type="text" placeholder="your@email.com" name="email">
-        
-            <label for="title"><b>object</b></label>
-            <input type="text" placeholder="email object" name="object">
-        
-            <label for="body"><b>content</b></label>
-            <textarea name="body" placeholder="say hi!" cols="50" rows="10"></textarea>
-        </div>
-        
-        <div class="contact-send-btn">
-            <input type="submit" value="send" class="btn">
-        </div>
+            <div class="contact-inside-form">
+                <label for="name"><b>name</b></label>
+                <input type="text" placeholder="your name" name="name" id="name" autocomplete="name">
+            
+                <label for="email"><b>email</b></label>
+                <input type="text" placeholder="your@email.com" name="email" id="email" autocomplete="email">
+            
+                <label for="subject"><b>subject</b></label>
+                <input type="text" placeholder="email subject" name="subject" id="subject">
+            
+                <label for="message"><b>message</b></label>
+                <textarea name="message" placeholder="say hi!" cols="50" rows="10" id="message"></textarea>
+            </div>
+            
+            <div class="contact-send-btn">
+                <input type="submit" value="send" class="btn">
+            </div>
         </form>
     </div>
 </div>
