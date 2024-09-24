@@ -3,6 +3,7 @@ const router = express.Router()
 const Log = require('../models/Log')
 const locals = require('../config/locals')
 const isEmailValid = require('../mailer/email-validator')
+const verifyRecaptcha = require('../mailer/verify-recaptcha')
 
 /**
  * GET / 
@@ -76,17 +77,29 @@ router.get('/contact', (req, res) => {
  * POST /send email
 */
 router.post('/send-email', (req, res) => {
-    const { name, email, subject, message } = req.body
+    const { name, email, subject, message, 'g-recaptcha-response': recaptchaToken } = req.body
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !subject || !message || !recaptchaToken) {
         res.status(400).json({ status: 'error', message: 'Missing required fields' })
     }
+
+    // Verify the reCAPTCHA token
+   const isRecaptchaValid = verifyRecaptcha(recaptchaToken)
+
+   if (!isRecaptchaValid) {
+       return res.status(400).json({
+           status: 'error',
+           message: 'reCAPTCHA verification failed. Please try again.'
+       })
+   }
 
     if (!isEmailValid(email)) {
         return res.status(400).json({ status: 'error', message: 'Invalid email' })
     }
 
     res.status(200).json({ status: 'success', message: 'Email successfully sent' })
+
+    console.log(req.body)
 })
 
 module.exports = router

@@ -8,12 +8,22 @@ const message = document.getElementById('message')
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault()
 
-    const formData = {
-        name: name.value,
-        email: email.value,
-        subject: subject.value,
-        message: message.value
-    }
+    // Get the reCAPTCHA token
+   const recaptchaToken = grecaptcha.getResponse()
+
+
+   if (!recaptchaToken) {
+       alert('Please complete the reCAPTCHA')
+       return
+   }
+
+   const formData = {
+       name: name.value,
+       email: email.value,
+       subject: subject.value,
+       message: message.value,
+       'g-recaptcha-response': recaptchaToken
+   }
 
     try {
         const response = await fetch('/send-email', {
