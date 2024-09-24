@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Log = require('../models/Log')
 const locals = require('../config/locals')
+const isEmailValid = require('../mailer/email-validator')
 
 /**
  * GET / 
@@ -75,8 +76,17 @@ router.get('/contact', (req, res) => {
  * POST /send email
 */
 router.post('/send-email', (req, res) => {
-    console.log(req.body);
-    res.send('Data received');
-});
+    const { name, email, subject, message } = req.body
+
+    if (!name || !email || !subject || !message) {
+        res.status(400).json({ status: 'error', message: 'Missing required fields' })
+    }
+
+    if (!isEmailValid(email)) {
+        return res.status(400).json({ status: 'error', message: 'Invalid email' })
+    }
+
+    res.status(200).json({ status: 'success', message: 'Email successfully sent' })
+})
 
 module.exports = router
