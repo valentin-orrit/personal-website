@@ -230,6 +230,7 @@ img {
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: blur(6.8px);
     border: var(--glass-border);
+    z-index: -1;
 }
 
 
@@ -576,6 +577,28 @@ img {
 .log-content a {
     color: #ac58d3;
     font-weight: bold;
+}
+
+
+/* contact form */
+
+.contact-page h2 {
+    margin-top: -20px;
+}
+
+.contact-form {
+    margin-top: 40px;
+}
+
+.contact-inside-form {
+    padding: 20px 40px;
+}
+
+.contact-send-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 20px 0 0;
 }
 
 /*

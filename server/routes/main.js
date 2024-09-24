@@ -71,4 +71,12 @@ router.get('/contact', (req, res) => {
     res.render('contact', { locals: locals.contact })
 })
 
+/**
+ * POST /send email
+*/
+router.post('/send-email', (req, res) => {
+    console.log(req.body);
+    res.send('Data received');
+});
+
 module.exports = router
