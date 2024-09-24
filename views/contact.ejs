@@ -6,7 +6,7 @@
     
     <div class="contact-form">
         <form action="/send-email" method="POST">
-            <div class="contact-inside-form">
+            <div class="contact-inside-form glass-bg">
                 <label for="name"><b>name</b></label>
                 <input type="text" placeholder="your name" name="name" id="name" autocomplete="name">
             
@@ -17,7 +17,7 @@
                 <input type="text" placeholder="email subject" name="subject" id="subject">
             
                 <label for="message"><b>message</b></label>
-                <textarea name="message" placeholder="say hi!" cols="50" rows="10" id="message"></textarea>
+                <textarea name="message" placeholder="say hi!" cols="30" rows="7" id="message"></textarea>
             </div>
             
             <div class="contact-send-btn">
@@ -26,4 +26,6 @@
         </form>
     </div>
 </div>
+
+<script src="../server/mailer/send-email.js"></script>
 
