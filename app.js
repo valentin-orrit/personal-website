@@ -41,6 +41,11 @@ app.use('/', require('./server/routes/main'))
 app.use('/', require('./server/routes/admin'))
 
 
+if (!process.env.MJ_APIKEY_PUBLIC || !process.env.MJ_APIKEY_PRIVATE || !process.env.MJ_SENDER_EMAIL) {
+    console.error('Mailjet environment variables are not set. Please check your .env file.');
+    process.exit(1);
+}
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`)
 })

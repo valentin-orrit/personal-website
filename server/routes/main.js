@@ -4,6 +4,7 @@ const Log = require('../models/Log')
 const locals = require('../config/locals')
 const isEmailValid = require('../mailer/email-validator')
 const verifyRecaptcha = require('../mailer/verify-recaptcha')
+const { sendEmail } = require('../mailer/mailer')
 
 /**
  * GET / 
@@ -69,14 +70,14 @@ router.get('/log/:id', async (req, res) => {
 /**
  * GET /contact
 */
-router.get('/contact', (req, res) => {
+router.get('/contact', async (req, res) => {
     res.render('contact', { locals: locals.contact, siteKey: process.env.GOOGLE_CAPTCHA_SITE_KEY })
 })
 
 /**
  * POST /send email
 */
-router.post('/send-email', (req, res) => {
+router.post('/send-email', async (req, res) => {
     const { name, email, subject, message, 'g-recaptcha-response': recaptchaToken } = req.body
 
     if (!name || !email || !subject || !message || !recaptchaToken) {
@@ -97,9 +98,28 @@ router.post('/send-email', (req, res) => {
         return res.status(400).json({ status: 'error', message: 'Invalid email' })
     }
 
-    res.status(200).json({ status: 'success', message: 'Email successfully sent' })
+    // Send email using Mailjet
+    const emailSent = await sendEmail({
+        to: process.env.ADMIN_EMAIL,
+        name: "Contact",
+        subject: `New Contact Form Submission: ${subject}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        html: `<h3>New Contact Form</h3>
+               <p><strong>Name:</strong> ${name}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Subject:</strong> ${subject}</p>
+               <p><strong>Message:</strong> ${message}</p>`,
+        sender: {
+            email: email,
+            name: name
+        }
+    })
 
-    console.log(req.body)
+    if (emailSent) {
+        res.status(200).json({ status: 'success', message: 'Email successfully sent' })
+    } else {
+        res.status(500).json({ status: 'error', message: 'Failed to send email' })
+    }
 })
 
 module.exports = router
