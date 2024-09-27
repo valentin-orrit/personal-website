@@ -393,7 +393,7 @@ img {
 }
 
 .tech-icons-list ul li img {
-    width: var(--icon-sm);
+    width: var(--icon-md);
 }
 
 .tech-second-row {
@@ -548,8 +548,9 @@ img {
 */
 .footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin-top: 10px;
     padding-bottom: 10px;
 }
