@@ -37,4 +37,4 @@ const locals = {
     }    
 };
 
-module.exports = locals;
+module.exports = locals

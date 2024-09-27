@@ -70,8 +70,18 @@ router.get('/log/:id', async (req, res) => {
 /**
  * GET /contact
 */
-router.get('/contact', async (req, res) => {
-    res.render('contact', { locals: locals.contact, siteKey: process.env.GOOGLE_CAPTCHA_SITE_KEY })
+router.get('/contact', (req, res) => {
+    console.log('Rendering contact page. Flash messages:', {
+        success: res.locals.success_msg,
+        error: res.locals.error_msg
+    })
+    
+    res.render('contact', { 
+        locals: locals.contact, 
+        siteKey: process.env.GOOGLE_CAPTCHA_SITE_KEY,
+        success_msg: res.locals.success_msg,
+        error_msg: res.locals.error_msg
+    })
 })
 
 /**
@@ -81,21 +91,21 @@ router.post('/send-email', async (req, res) => {
     const { name, email, subject, message, 'g-recaptcha-response': recaptchaToken } = req.body
 
     if (!name || !email || !subject || !message || !recaptchaToken) {
-        res.status(400).json({ status: 'error', message: 'Missing required fields' })
+        req.flash('error_msg', 'Missing required fields')
+        return res.redirect('/contact')
     }
 
     // Verify the reCAPTCHA token
    const isRecaptchaValid = verifyRecaptcha(recaptchaToken)
 
    if (!isRecaptchaValid) {
-       return res.status(400).json({
-           status: 'error',
-           message: 'reCAPTCHA verification failed. Please try again.'
-       })
+       req.flash('error_msg', 'reCAPTCHA verification failed. Please try again.')
+       return res.redirect('/contact')
    }
 
     if (!isEmailValid(email)) {
-        return res.status(400).json({ status: 'error', message: 'Invalid email' })
+        req.flash('error_msg', 'Invalid email')
+        return res.redirect('/contact')
     }
 
     // Send email using Mailjet
@@ -116,10 +126,16 @@ router.post('/send-email', async (req, res) => {
     })
 
     if (emailSent) {
-        res.status(200).json({ status: 'success', message: 'Email successfully sent' })
+        req.flash('success_msg', 'Your message has been sent successfully!')
+        console.log('Setting success flash message')
     } else {
-        res.status(500).json({ status: 'error', message: 'Failed to send email' })
+        req.flash('error_msg', 'Failed to send email. Please try again later.')
+        console.log('Setting error flash message')
     }
+
+    console.log('Flash messages before redirect:', req.flash('success_msg'), req.flash('error_msg'))
+
+    res.redirect('/contact')
 })
 
 module.exports = router
