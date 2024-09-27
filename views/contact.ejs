@@ -3,19 +3,12 @@
     <p>
         Want to work together ? Have a question ? Hit me up and I'll get back to you.
     </p>
-
-    <% if (success_msg) { %>
-        <div class="alert alert-success">
-            <%= success_msg %>
-        </div>
-    <% } %>
     
-    <% if (error_msg) { %>
+    <% if (error_msg && error_msg.length > 0) { %>
         <div class="alert alert-danger">
             <%= error_msg %>
         </div>
     <% } %>
-
 
     <div class="contact-form">
         <form action="/send-email" method="POST">
