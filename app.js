@@ -17,15 +17,15 @@ const PORT = process.env.PORT || 3000
 connectDB()
 
 app.use(express.static('public'))
-app.use(express.json())
 app.use(cookieParser())
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: process.env.SESSION_SECRET,
     resave: true,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI
     }),
@@ -39,10 +39,7 @@ app.use(flash())
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg')
     res.locals.error_msg = req.flash('error_msg')
-    console.log('Flash messages in middleware:', {
-        success: res.locals.success_msg,
-        error: res.locals.error_msg
-    })
+
     next()
 })
 

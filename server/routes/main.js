@@ -71,11 +71,6 @@ router.get('/log/:id', async (req, res) => {
  * GET /contact
 */
 router.get('/contact', (req, res) => {
-    console.log('Rendering contact page. Flash messages:', {
-        success: res.locals.success_msg,
-        error: res.locals.error_msg
-    })
-    
     res.render('contact', { 
         locals: locals.contact, 
         siteKey: process.env.GOOGLE_CAPTCHA_SITE_KEY,
@@ -127,15 +122,18 @@ router.post('/send-email', async (req, res) => {
 
     if (emailSent) {
         req.flash('success_msg', 'Your message has been sent successfully!')
-        console.log('Setting success flash message')
     } else {
         req.flash('error_msg', 'Failed to send email. Please try again later.')
-        console.log('Setting error flash message')
     }
 
-    console.log('Flash messages before redirect:', req.flash('success_msg'), req.flash('error_msg'))
+    res.redirect('/email-sent')
+})
 
-    res.redirect('/contact')
+/**
+ * GET /email-sent
+*/
+router.get('/email-sent', (req, res) => {
+    res.render('email-sent')
 })
 
 module.exports = router
