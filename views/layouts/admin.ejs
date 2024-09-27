@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" defer src="/js/script.js"></script>
 
-    <script>
+    <script type="text/javascript">
         /*to prevent Firefox FOUC, this must be here*/
-        let FF_FOUC_FIX;
+        var elm=document.getElementsByTagName("html")[0];
+        elm.style.display="none";
+        document.addEventListener("DOMContentLoaded",function(event) {elm.style.display="block"; });
     </script>
 </head>
 
