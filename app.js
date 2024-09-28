@@ -1,7 +1,9 @@
 require('dotenv').config()
 
+const path = require('path')
 const express = require('express')
 const expressLayout = require('express-ejs-layouts')
+const favicon = require('serve-favicon')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
@@ -17,6 +19,7 @@ const PORT = process.env.PORT || 3000
 connectDB()
 
 app.use(express.static('public'))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
