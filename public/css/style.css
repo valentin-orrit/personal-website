@@ -48,6 +48,8 @@ body {
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
+
+    visibility: hidden;
 }
 
 /* 
