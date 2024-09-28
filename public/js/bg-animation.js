@@ -20,9 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let direction = sessionStorage.getItem(`circle-${index}-direction`) || (Math.random() > 0.5 ? 1 : -1)
         direction = parseInt(direction)
 
+        // Set speed for each circle (you can customize these values)
+        const speed = getCircleSpeed(index)
+
         // Animation function
         function animate() {
-            y += direction * 0.4 // Adjust speed as needed
+            y += direction * speed // Use individual speed
 
             // Reverse direction at boundaries
             if (y > window.innerHeight + 100 || y < -100) {
@@ -48,4 +51,10 @@ function getScale(element) {
         return `scale(${matrix.a}, ${matrix.d})`
     }
     return ''
+}
+
+// Helper function to get speed based on circle index
+function getCircleSpeed(index) {
+    const speeds = [0.3, 0.5, 0.25, 0.45, 0.7, 0.6]
+    return speeds[index % speeds.length]
 }
