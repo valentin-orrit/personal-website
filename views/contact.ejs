@@ -1,7 +1,7 @@
 <div class="contact-page">
-    <h2>Contact</h2>
+    <h2>contact</h2>
     <p>
-        Want to work together ? Have a question ? Hit me up and I'll get back to you.
+        Une question concernant votre projet ? Un simple bonjour ? Ecrivez-moi et je reviendrai vers vous rapidement.
     </p>
     
     <% if (error_msg && error_msg.length > 0) { %>
@@ -13,17 +13,17 @@
     <div class="contact-form">
         <form action="/send-email" method="POST">
             <div class="contact-inside-form glass-bg">
-                <label for="name"><b>name</b></label>
-                <input type="text" placeholder="your name" name="name" id="name" autocomplete="name">
+                <label for="name"><b>nom</b></label>
+                <input type="text" placeholder="votre nom" name="name" id="name" autocomplete="name">
             
                 <label for="email"><b>email</b></label>
-                <input type="text" placeholder="your@email.com" name="email" id="email" autocomplete="email">
+                <input type="text" placeholder="votre@email.com" name="email" id="email" autocomplete="email">
             
-                <label for="subject"><b>subject</b></label>
-                <input type="text" placeholder="email subject" name="subject" id="subject">
+                <label for="subject"><b>objet</b></label>
+                <input type="text" placeholder="objet du message" name="subject" id="subject">
             
                 <label for="message"><b>message</b></label>
-                <textarea name="message" placeholder="say hi!" cols="30" rows="7" id="message"></textarea>
+                <textarea name="message" placeholder="dire bonjour!" cols="30" rows="7" id="message"></textarea>
 
                 <div class="captcha">
                     <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="contact-send-btn">
-                <input type="submit" value="send" class="btn">
+                <input type="submit" value="envoyer" class="btn">
             </div>
         </form>
     </div>

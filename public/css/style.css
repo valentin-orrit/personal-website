@@ -602,6 +602,7 @@ img {
     justify-content: center;
     align-items: center;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .socials img {
@@ -662,12 +663,12 @@ img {
 /* contact form */
 
 .contact-page h2 {
-    margin: 10px;
+    margin-left: 50px;
     margin-top: -30px;
 }
 
 .contact-page p {
-    margin: 10px; 
+    margin-left: 50px; 
 }
 
 .contact-form {
@@ -857,7 +858,6 @@ img {
     }
     
     .contact {
-        justify-content: end;
         margin-top: 10px;
     }
 
