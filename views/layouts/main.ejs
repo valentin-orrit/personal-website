@@ -13,6 +13,7 @@
 
 <body>
     <script>/*to prevent Firefox FOUC, this must be here*/ 0</script>
+    <%- include('../partials/header.ejs') %>        
     <div class="container">
         
         <div class="circles-bg">
@@ -26,7 +27,6 @@
             <div class="far-circle far-circle-4"></div>
         </div>
       
-        <%- include('../partials/header.ejs') %>        
         
         <main class="main">
             <%- body %>
@@ -34,6 +34,6 @@
 
         <%- include('../partials/footer.ejs') %>
     </div>
-
+    
 </body>
 </html>

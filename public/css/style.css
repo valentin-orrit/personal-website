@@ -539,6 +539,7 @@ img {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     padding: 15px 20px;
+    margin: 0 auto;
     grid-template-areas: 
     "header-logo contact-link"
     "header-nav header-nav";
