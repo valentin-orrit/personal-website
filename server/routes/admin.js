@@ -58,7 +58,6 @@ router.get('/admin', async (req, res) => {
 router.post('/admin', async (req, res) => {
     try {
         const { username, password } = req.body
-        console.log('Received credentials:', { username, password })
 
         const user = await User.findOne( { username } )
 

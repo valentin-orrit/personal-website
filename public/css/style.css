@@ -540,6 +540,7 @@ img {
     grid-template-rows: auto;
     padding: 15px 20px;
     margin: 0 auto;
+    margin-bottom: 60px;
     grid-template-areas: 
     "header-logo contact-link"
     "header-nav header-nav";
@@ -591,7 +592,7 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 /* 
@@ -615,6 +616,10 @@ img {
 /* 
     logbook
 */
+.logs {
+    margin: 0 auto;
+}
+
 .log-ul {
     display: flex;
     flex-direction: column;
@@ -781,6 +786,10 @@ img {
 
 
 @media only screen and (min-width: 975px) {
+
+    .main {
+        padding: 10px;
+    }
 
     .circle-2 {
         left: 5%;
