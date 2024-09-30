@@ -123,7 +123,6 @@ body {
     top: -90%;
     left: 53%;
     transform: scale(1.9);
-    filter: blur(5px);
 }
 
 .far-circle-1 {
@@ -315,6 +314,10 @@ img {
 }
 
 /* Projects button */
+.projects-btn {
+    margin-top: -10px;
+}
+
 .projects-btn .btn-text {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
@@ -611,6 +614,40 @@ img {
     margin: 0 4px;
 }
 
+/* 
+    Portfolio
+*/
+.portfolio {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    margin-bottom: 60px;
+}
+
+.project-invert {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-side-invert {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    object-fit: cover;
+    filter: drop-shadow(0px 44px 34px rgba(0,0,0,0.25));
+    border-radius: var(--border-radius);
+}
 
 /* 
     logbook
@@ -825,6 +862,16 @@ img {
         align-items: end;
     }
 
+    .left-side-invert {
+        align-items: start;
+        margin: 20px;
+        padding-right: 300px;
+    }
+
+    .hero .left-side-invert p {
+        text-align: start;
+    }
+
     .hero-content {
         flex-direction: row;
     }
@@ -837,6 +884,10 @@ img {
     .hero-text {
         text-align: end;
         margin-top: 2rem;
+    }
+
+    .projects-btn {
+        margin-top: -20px;
     }
 
     .tech-stack-text {
