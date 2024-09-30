@@ -197,6 +197,34 @@ h3 { font-size: var(--font-size-md); }
     font-size: var(--font-size-md);
 }
 
+.projects-btn {
+    margin-top: -10px;
+}
+
+
+.projects-btn .plus-sign {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projects-btn:hover .plus-sign {
+    transform: rotate(90deg);
+
+}
+
+.projects-btn:hover {
+    color: var(--gray);
+}
+
+.projects-btn .btn-text {
+    display: inline-block;
+}
+
+.projects-btn .btn-text a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .btn-danger {
     background-color: #FF2020;
     color: #fff;
@@ -311,24 +339,6 @@ img {
     text-align: center;
     margin-top: 10px;
     line-height: 1.45;
-}
-
-/* Projects button */
-.projects-btn {
-    margin-top: -10px;
-}
-
-.projects-btn .btn-text {
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-}
-
-.projects-btn:hover .btn-text {
-    animation: biggerText 2s alternate infinite ease-in-out;
-}
-
-@keyframes biggerText {
-    to { transform: scale(1.03); }
 }
 
 .hero-image {
@@ -626,6 +636,44 @@ img {
     margin-bottom: 60px;
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+    line-height: 0; /* Remove extra space below inline image */
+}
+  
+.hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: var(--border-radius);
+    overflow-y: auto;
+    text-align: justify;
+    backdrop-filter: blur(2px);
+}
+  
+.image-container:hover .hover-text {
+    opacity: 1;
+}
+
+.hover-text p {
+    margin: 20px;
+    line-height: 1.5;
+  }
+  
+  .image-container:hover .hover-text {
+    opacity: 1;
+  }
+
 .project-invert {
     display: flex;
     flex-direction: column;
@@ -865,7 +913,7 @@ img {
     .left-side-invert {
         align-items: start;
         margin: 20px;
-        padding-right: 300px;
+
     }
 
     .hero .left-side-invert p {
