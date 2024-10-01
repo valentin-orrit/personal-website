@@ -553,7 +553,7 @@ img {
     grid-template-rows: max-content;
     padding: 15px 20px;
     margin: 0 10px;
-    margin-bottom: 60px;
+    margin-bottom: 5px;
     grid-template-areas: 
     "header-logo contact-link"
     "header-nav header-nav";
@@ -564,7 +564,7 @@ img {
     text-decoration: none;
     font-size: var(--font-size-md);
     display: flex;
-    justify-content: start;
+    justify-content: center;
 }
 
 .header-nav {
@@ -594,7 +594,7 @@ img {
 .contact-link {
     grid-area: contact-link;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     color: #fff;
 }
 
@@ -880,16 +880,21 @@ img {
         grid-template-areas: 
         "header-logo header-nav contact-link";
         padding: 0 10rem;
+        margin-bottom: 20px;
     }
 
     .header-logo {
-        justify-content: end;
+        justify-content: start;
         padding-right: 10px;
     }
 
     .contact-link {
-        justify-content: start;
+        justify-content: end;
         padding-left: 10px;
+    }
+
+    .header-buttons {
+        margin-bottom: 30px;
     }
 }
 
@@ -1016,8 +1021,11 @@ img {
 /* 
     Dark mode
 */
-.header-btns {
-    display: inline-block;
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .dark-mode-toggle {
@@ -1025,21 +1033,18 @@ img {
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-    position: fixed;
-    top: 20px;
-    right: 20px;
     z-index: 1000;
-  }
+}
   
-  .dark-mode-toggle .moon {
+.dark-mode-toggle .moon {
     display: none;
-  }
+}
   
-  .dark-mode-toggle .sun {
+.dark-mode-toggle .sun {
     display: inline-block;
-  }
+}
   
-  /* Dark mode styles */
+/* Dark mode styles */
 body.dark-mode {
     background: linear-gradient(160deg, #483166, #37275c 20%, #191242 100%);
     background-attachment: fixed;
