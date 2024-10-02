@@ -205,6 +205,8 @@ h3 { font-size: var(--font-size-md); }
 
 .projects-btn .plus-sign {
     display: inline-block;
+    position: relative;
+    top: 1px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -606,6 +608,21 @@ img {
 }
 
 /* 
+    Header buttons
+*/
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    position: relative;
+    top: 10px;
+}
+
+/* 
     Footer
 */
 .footer {
@@ -919,6 +936,7 @@ img {
         top: 20px;
         right: 40px;
         z-index: 1000;
+        margin: 7px;
     }
 
     .main {
@@ -950,13 +968,28 @@ img {
         padding-bottom: 0;
     }
 
+    .project {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    #threejs-double-galaxy {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+    }
+    
     .left-side {
         align-items: end;
+        margin: 35px;
     }
 
     .left-side-invert {
         align-items: start;
-        margin: 20px;
+        margin: 35px;
 
     }
 
@@ -1042,12 +1075,6 @@ img {
 /* 
     Dark mode
 */
-.header-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
 .dark-mode-toggle {
     background: none;
