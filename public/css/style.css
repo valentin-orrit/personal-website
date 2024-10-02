@@ -984,13 +984,16 @@ img {
     
     .left-side {
         align-items: end;
-        margin: 35px;
+        margin-top: 7px;
+    }
+    
+    .portfolio .left-side {
+        margin: 40px;
     }
 
     .left-side-invert {
         align-items: start;
         margin: 35px;
-
     }
 
     .hero .left-side-invert p {
