@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroImage = document.querySelector('[data-hero-image]')
   
   const lightModeImage = '/img/hero-image.png'
-  const darkModeImage = '/img/hero-image-dark.png'  // Make sure this image exists
+  const darkModeImage = '/img/hero-image-dark.png'
 
   function setDarkMode(isDark) {
       body.classList.toggle('dark-mode', isDark)
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('darkMode', isDark ? 'enabled' : null)
   }
 
-  // Check for saved dark mode preference
   if (localStorage.getItem('darkMode') === 'enabled') {
       setDarkMode(true)
   }

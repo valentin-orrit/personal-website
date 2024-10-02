@@ -46,6 +46,12 @@ app.use((req, res, next) => {
     next()
 })
 
+// Serve translation files
+app.get('/translations/:file', (req, res) => {
+    const filePath = path.join(__dirname, 'server', 'translations', req.params.file)
+    res.sendFile(filePath)
+})
+
 // Templating Engine
 app.use(expressLayout)
 app.set('layout', './layouts/main')

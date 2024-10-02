@@ -11,7 +11,7 @@ const { sendEmail } = require('../mailer/mailer')
 */
 router.get('', (req, res) => {
     
-    res.render('index', { locals: locals.index })
+    res.render('index', { locals: locals.index})
 })
 
 /**
