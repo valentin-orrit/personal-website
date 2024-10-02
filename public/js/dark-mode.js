@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setDarkMode(isDark) {
       body.classList.toggle('dark-mode', isDark)
-      heroImage.src = isDark ? darkModeImage : lightModeImage
+      if (heroImage) {
+          heroImage.src = isDark ? darkModeImage : lightModeImage
+      }
       localStorage.setItem('darkMode', isDark ? 'enabled' : null)
   }
 
