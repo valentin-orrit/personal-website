@@ -339,7 +339,8 @@ img {
     font-size: var(--font-size-lg);
     text-align: center;
     margin-top: 10px;
-    line-height: 1.45;
+    line-height: 0.8;
+    margin-bottom: 10px;
 }
 
 .hero-image {
