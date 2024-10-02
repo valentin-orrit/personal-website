@@ -1,20 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const darkModeToggle = document.getElementById('darkModeToggle')
-    const body = document.body
+  const darkModeToggle = document.getElementById('darkModeToggle')
+  const body = document.body
+  const heroImage = document.querySelector('[data-hero-image]')
   
-    // Check for saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'enabled') {
-      body.classList.add('dark-mode')
-    }
-  
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode')
-      
-      // Save preference to localStorage
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled')
-      } else {
-        localStorage.setItem('darkMode', null)
-      }
-    })
+  const lightModeImage = '/img/hero-image.png'
+  const darkModeImage = '/img/hero-image-dark.png'  // Make sure this image exists
+
+  function setDarkMode(isDark) {
+      body.classList.toggle('dark-mode', isDark)
+      heroImage.src = isDark ? darkModeImage : lightModeImage
+      localStorage.setItem('darkMode', isDark ? 'enabled' : null)
+  }
+
+  // Check for saved dark mode preference
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      setDarkMode(true)
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+      setDarkMode(!body.classList.contains('dark-mode'))
+  })
 })
