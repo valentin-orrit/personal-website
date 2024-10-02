@@ -34,6 +34,11 @@ const locals = {
         title: 'add log - valentin orrit',
         description: 'add a new log'
     },
+    emailSent: {
+        pageName: 'email-sent',
+        title: 'email sent - valentin orrit',
+        description: 'thank your for you message'
+    },
 
     // Get individual locals for each log entry
     getLogLocals: function(data) {

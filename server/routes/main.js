@@ -133,7 +133,7 @@ router.post('/send-email', async (req, res) => {
  * GET /email-sent
 */
 router.get('/email-sent', (req, res) => {
-    res.render('email-sent')
+    res.render('email-sent', { locals: locals.emailSent})
 })
 
 module.exports = router

@@ -40,12 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.forEach(element => {
             const key = element.getAttribute('data-lang-key')
             
-            // Update text content for elements with text
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                // Set placeholder attribute if it's an input or textarea
                 element.placeholder = translations[lang][key] || key
             } else {
-                // Set text content for other elements
                 element.textContent = translations[lang][key] || key
             }
         })
