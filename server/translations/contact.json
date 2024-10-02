@@ -1,0 +1,22 @@
+{
+    "en": {
+        "title": "contact",
+        "description": "A question about your project? Just want to say hello? Hit me up and I will get back to you quickly.",
+        "name": "name",
+        "name-placeholder": "your name",
+        "subject": "subject",
+        "subject-placeholder": "subject of your message",
+        "message-placeholder": "say hello !",
+        "send-btn": "send"
+    },
+    "fr": {
+        "title": "contact",
+        "description": "Une question concernant votre projet ? Un simple bonjour ? Ecrivez-moi et je reviendrai vers vous rapidement.",
+        "name": "nom",
+        "name-placeholder": "votre nom",
+        "subject": "objet",
+        "subject-placeholder": "objet de votre message",
+        "message-placeholder": "dites bonjour !",
+        "send-btn": "envoyer"
+    }
+}

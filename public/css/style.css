@@ -583,6 +583,7 @@ img {
     justify-content: center;
     align-items: center;
     padding: 0;
+    font-size: var(--font-size-md);
 }
 
 .header-list li {
@@ -903,7 +904,7 @@ img {
 @media only screen and (min-width: 1500px) {
     .header {
         padding: 0 20rem;
-        margin-bottom: 80px;
+        margin-bottom: 70px;
     }
 }
 
@@ -1108,7 +1109,7 @@ body.dark-mode .dark-mode-toggle .sun {
 }
 
 body.dark-mode .footer {
-    color: #6c707a;
+    color: #bdbdbd;
 }
 
 /* dark mode for svg icons */

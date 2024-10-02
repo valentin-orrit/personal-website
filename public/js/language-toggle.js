@@ -39,9 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const elements = document.querySelectorAll('[data-lang-key]')
         elements.forEach(element => {
             const key = element.getAttribute('data-lang-key')
-            element.textContent = translations[lang][key] || key
+            
+            // Update text content for elements with text
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                // Set placeholder attribute if it's an input or textarea
+                element.placeholder = translations[lang][key] || key
+            } else {
+                // Set text content for other elements
+                element.textContent = translations[lang][key] || key
+            }
         })
+    
+        // Update submit button value
+        const submitButton = document.querySelector('input[type="submit"][data-lang-key="send-btn"]')
+        if (submitButton) {
+            submitButton.value = translations[lang][submitButton.getAttribute('data-lang-key')] || submitButton.value
+        }
     }
+    
 
     // Check for saved language preference
     const savedLanguage = localStorage.getItem('language') || 'en'
