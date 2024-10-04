@@ -202,17 +202,21 @@ h3 { font-size: var(--font-size-md); }
     margin-top: -10px;
 }
 
+.projects-btn a {
+    position: relative;
+    top: -2px;
+}
+
 
 .projects-btn .plus-sign {
     display: inline-block;
     position: relative;
-    top: 1px;
+    top: -2px;
     transition: transform 0.3s ease-in-out;
 }
 
 .projects-btn:hover .plus-sign {
-    transform: rotate(90deg);
-
+    transform: translateY(2px) rotate(90deg);
 }
 
 .projects-btn:hover {
@@ -1136,7 +1140,7 @@ body.dark-mode a {
 }
   
 body.dark-mode a:hover {
-    color: #e94560;
+    color: #d0c0fc;
 }
   
 body.dark-mode .dark-mode-toggle .moon {
