@@ -916,6 +916,10 @@ img {
     .header-buttons {
         margin-bottom: 30px;
     }
+
+    .footer {
+        padding: 0 10rem;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
@@ -1070,8 +1074,13 @@ img {
         align-items: center;
     }
 
+    .socials {
+        padding-right: 15px;
+    }
+
     .footer {
         flex-direction: row;
+        padding: 0 20rem;
     }
 }
 
