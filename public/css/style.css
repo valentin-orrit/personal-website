@@ -722,7 +722,7 @@ img {
 /* 
     projects
 */
-.live-project-manager-page {
+.project-page {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
