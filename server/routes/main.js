@@ -143,21 +143,21 @@ router.get('/email-sent', (req, res) => {
  * GET /live-project-manager
 */
 router.get('/live-project-manager', (req, res) => {
-    res.render('projects/live-project-manager', { locals: locals.emailSent})
+    res.render('projects/live-project-manager', { locals: locals.liveProjectManager})
 })
 
 /**
  * GET /hotefinder
 */
 router.get('/hotefinder', (req, res) => {
-    res.render('projects/hotefinder', { locals: locals.emailSent})
+    res.render('projects/hotefinder', { locals: locals.hotefinder})
 })
 
 /**
  * GET /threejs-double-galaxy
 */
 router.get('/threejs-double-galaxy', (req, res) => {
-    res.render('projects/threejs-double-galaxy', { locals: locals.emailSent})
+    res.render('projects/threejs-double-galaxy', { locals: locals.doubleGalaxy})
 })
 
 

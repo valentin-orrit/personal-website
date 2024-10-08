@@ -39,6 +39,21 @@ const locals = {
         title: 'email sent - valentin orrit',
         description: 'thank your for you message'
     },
+    liveProjectManager: {
+        pageName: 'live-project-manager',
+        title: 'live project manager - valentin orrit',
+        description: 'CLI App which finds ableton live projects in a given directory, extract the pertinent data and store it in a JSON database.'
+    },
+    hotefinder: {
+        pageName: 'hotefinder',
+        title: 'hotefinder - valentin orrit',
+        description: 'Platform that connects concierges and property owners for managing short-term rentals. Allows the creation and updating of tasks to facilitate the concierge\'s work and automatically keep the owner informed.'
+    },
+    doubleGalaxy: {
+        pageName: 'threejs-double-galaxy',
+        title: 'threejs double galaxy - valentin orrit',
+        description: '3D representation of galaxies in Three.js, adapted from an exercise in the Three.js Journey course by Bruno Simon.'
+    },
 
     // Get individual locals for each log entry
     getLogLocals: function(data) {
