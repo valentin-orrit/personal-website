@@ -729,6 +729,7 @@ img {
     padding: 0 auto;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 
 .project-page-hero-image {
@@ -747,7 +748,8 @@ img {
     margin: 0 auto;
     padding: 0 auto;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    z-index: 10;
 }
 
 .project-page-glass-bg {
@@ -762,11 +764,18 @@ img {
     padding: 0;
     margin-bottom: 10px;
     justify-content: center;
+    align-items: center;
 }
 
 .project-links-icon img {
     width: var(--icon-sm);
     margin: 0 4px;
+}
+
+#link-github-icon {
+    position: relative;
+    top: -3px;
+    width: 35px;
 }
 
 .project-description {
