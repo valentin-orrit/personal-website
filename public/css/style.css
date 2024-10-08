@@ -720,6 +720,36 @@ img {
 }
 
 /* 
+    projects
+*/
+.live-project-manager-page {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-links-list {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.project-links-icon img {
+    width: var(--icon-sm);
+    margin: 0 4px;
+}
+
+.project-description {
+    padding: 0 50px;
+}
+
+/* 
     logbook
 */
 .logs {
