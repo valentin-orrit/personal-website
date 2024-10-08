@@ -1,0 +1,14 @@
+{
+    "en": {
+        "description-1": "A CLI app that allows you to find Ableton Live projects in a directory, extract relevant data, and store it in a JSON database.",
+        "description-2": "This project is the first CLI app I developed and serves as a prototype for a future React app for managing Ableton Live projects, which is a music production software. As a musician and electronic music producer for over 15 years, I have created a vast number of Live projects (which can be a track, a live performance, etc.), and managing them can be chaotic and complex due to audio samples and plugins, and Ableton Live does not offer any solution in this area.",
+        "description-3": "This prototype aims to simplify project management. In the final application, it will be possible to organize projects into a library and playlists, add tags, and access everything from anywhere.",
+        "description-4": "As my first project in Node.js, this project allowed me to learn a lot and gain a deeper understanding of JavaScript, particularly in its differences from Ruby."
+    },
+    "fr": {
+        "description-1": "App CLI permettant de trouver des projets Ableton Live dans un directory, en extraire les données pertinantes et les stocker dans une base de donnée JSON.",
+        "description-2": "Ce projet est la première app CLI que j'ai réalisé et un prototype pour une future app React de gestion de projet Ableton Live, qui est un logicel de production musicale. Etant musicien et producteur de musique électronique depuis plus de 15 ans, j'ai créé énormément de projets Live (un projet peut être un morceau, un live etc.) dont la gestion peut être chaotique et complexe à cause des samples audio et des plugins et Ableton Live ne propose aucune solution de ce côté là.",
+        "description-3": "Ce prototype vient essayer de faciliter cette gestion de projets. Dans l'application finale, il sera possible de classer les projets dans une bibliothèque et des playlists, de rajouter des tags et d'accéder à tout ça depuis n'importe où.",
+        "description-4": "Etant mon premier projet en nodejs, ce projet m'a permis d'apprendre énormément de choses et d'apréhender plus javascript, notamment dans ses différences avec Ruby."
+    }
+}
