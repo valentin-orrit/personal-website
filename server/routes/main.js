@@ -10,7 +10,6 @@ const { sendEmail } = require('../mailer/mailer')
  * GET / 
 */
 router.get('', (req, res) => {
-    
     res.render('index', { locals: locals.index})
 })
 
@@ -135,5 +134,31 @@ router.post('/send-email', async (req, res) => {
 router.get('/email-sent', (req, res) => {
     res.render('email-sent', { locals: locals.emailSent})
 })
+
+/**
+ * PROJECTS
+*/
+
+/**
+ * GET /live-project-manager
+*/
+router.get('/live-project-manager', (req, res) => {
+    res.render('projects/live-project-manager', { locals: locals.emailSent})
+})
+
+/**
+ * GET /hotefinder
+*/
+router.get('/hotefinder', (req, res) => {
+    res.render('projects/hotefinder', { locals: locals.emailSent})
+})
+
+/**
+ * GET /threejs-double-galaxy
+*/
+router.get('/threejs-double-galaxy', (req, res) => {
+    res.render('projects/threejs-double-galaxy', { locals: locals.emailSent})
+})
+
 
 module.exports = router
