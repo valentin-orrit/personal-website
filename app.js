@@ -32,7 +32,11 @@ app.use(session({
     store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI
     }),
-    cookie: { maxAge: 3600000 }
+    cookie: { 
+        maxAge: 3600000,
+        sameSite: 'Lax',
+        secure: true
+    }
 }))
 
 // Flash messages

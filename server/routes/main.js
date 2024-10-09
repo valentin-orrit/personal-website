@@ -89,43 +89,47 @@ router.post('/send-email', async (req, res) => {
         return res.redirect('/contact')
     }
 
-    // Verify the reCAPTCHA token
-   const isRecaptchaValid = verifyRecaptcha(recaptchaToken)
+    try {
+        // Verify the reCAPTCHA token
+        const isRecaptchaValid = verifyRecaptcha(recaptchaToken)
 
-   if (!isRecaptchaValid) {
-       req.flash('error_msg', 'reCAPTCHA verification failed. Please try again.')
-       return res.redirect('/contact')
-   }
+        if (!isRecaptchaValid) {
+            req.flash('error_msg', 'reCAPTCHA verification failed. Please try again.')
+            return res.redirect('/contact')
+        }
 
-    if (!isEmailValid(email)) {
-        req.flash('error_msg', 'Invalid email')
+        if (!isEmailValid(email)) {
+            req.flash('error_msg', 'Invalid email')
+            return res.redirect('/contact')
+        }
+        // Send email using Mailjet
+        const emailSent = await sendEmail({
+            to: process.env.ADMIN_EMAIL,
+            name: "Contact",
+            subject: `New Contact Form Submission: ${subject}`,
+            text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+            html: `<h3>New Contact Form</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+                <p><strong>Message:</strong> ${message}</p>`,
+            sender: {
+                email: email,
+                name: name
+            }
+        })
+        if (emailSent) {
+            req.flash('success_msg', 'Your message has been sent successfully!')
+        } else {
+            req.flash('error_msg', 'Failed to send email. Please try again later.')
+        }
+
+        res.redirect('/email-sent')
+    } catch (error) {
+        console.error('reCAPTCHA verification error:', error)
+        req.flash('error_msg', 'An error occurred. Please try again later.')
         return res.redirect('/contact')
     }
-
-    // Send email using Mailjet
-    const emailSent = await sendEmail({
-        to: process.env.ADMIN_EMAIL,
-        name: "Contact",
-        subject: `New Contact Form Submission: ${subject}`,
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-        html: `<h3>New Contact Form</h3>
-               <p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Subject:</strong> ${subject}</p>
-               <p><strong>Message:</strong> ${message}</p>`,
-        sender: {
-            email: email,
-            name: name
-        }
-    })
-
-    if (emailSent) {
-        req.flash('success_msg', 'Your message has been sent successfully!')
-    } else {
-        req.flash('error_msg', 'Failed to send email. Please try again later.')
-    }
-
-    res.redirect('/email-sent')
 })
 
 /**

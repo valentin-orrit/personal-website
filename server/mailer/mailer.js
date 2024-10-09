@@ -32,7 +32,6 @@ const sendEmail = async (options) => {
     })
 
     const result = await request
-    console.log('Email sent successfully:', result.body)
     return true
     
     } catch (error) {

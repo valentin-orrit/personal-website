@@ -779,7 +779,7 @@ img {
 }
 
 .project-description {
-    padding: 0 50px;
+    padding: 0 7px;
     display: flex;
     flex-direction: column;
 }
@@ -990,6 +990,10 @@ img {
 
     .footer {
         padding: 0 10rem;
+    }
+
+    .project-description {
+        padding: 0 70px;
     }
 }
 
