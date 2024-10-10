@@ -74,7 +74,6 @@ body {
     border-radius: 50%;
     background: linear-gradient(130deg, #D8E3FF, #F5E2FF, #FD98FF);
     z-index: -10;
-    /* animation: upDown 5s alternate infinite ease-in-out; */
 }
 
 .far-circle {
@@ -85,21 +84,7 @@ body {
     background: linear-gradient(130deg, #D8E3FF, #F5E2FF, #FD98FF);
     filter: blur(8px);
     z-index: -100;
-
-    /* animation: downUp 5s alternate infinite ease-in-out; */
 }
-
-/* Circle animation */
-/* @keyframes upDown {
-    0% { transform: translatey(0); }
-    100% { transform: translatey(700px); }
-}
-
-@keyframes downUp {
-    0% { transform: translatey(0); }
-    100% { transform: translatey(-500px); }
-} */
-
 
 .circle-1 {
     top: -10%;
@@ -545,7 +530,6 @@ img {
 /* 
     header
 */
-
 .header {
     display: grid;
     align-items: center;
@@ -661,7 +645,7 @@ img {
 .image-container {
     position: relative;
     display: inline-block;
-    line-height: 0; /* Remove extra space below inline image */
+    line-height: 0;
 }
   
 .hover-text {
@@ -734,8 +718,6 @@ img {
 
 .project-page-hero-image {
     width: 100%;
-    /* max-width: 850px;
-    height: 400px; */
     object-fit: cover;
     filter: drop-shadow(0px 44px 34px rgba(0,0,0,0.25));
     border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -848,7 +830,6 @@ img {
 
 
 /* contact form */
-
 .contact-page h2 {
     margin-left: 10px;
     margin-top: -10px;
@@ -949,7 +930,6 @@ img {
 /* 
     Email-sent
 */
-
 .email-sent {
     display: flex;
     flex-direction: column;
@@ -1162,7 +1142,6 @@ img {
 /* 
     Dark mode
 */
-
 .dark-mode-toggle {
     background: none;
     border: none;
