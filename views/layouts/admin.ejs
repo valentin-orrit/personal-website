@@ -6,15 +6,15 @@
     <title><%= locals.title %></title>
     <meta name="description" content="<%= locals.description %>">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" defer src="/js/prevent-fouc.js"></script>
-    <script type="text/javascript" defer src="/js/bg-animation.js"></script>
+    <script type="text/javascript" nonce="<%= nonce %>" defer src="/js/prevent-fouc.js"></script>
+    <script type="text/javascript" nonce="<%= nonce %>" defer src="/js/bg-animation.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="text/javascript" defer src="/js/dark-mode.js"></script>
-    <script src="/js/language-toggle.js"></script>
+    <script type="text/javascript" nonce="<%= nonce %>" defer src="/js/dark-mode.js"></script>
+    <script nonce="<%= nonce %>" src="/js/language-toggle.js"></script>
 </head>
 
-<body data-page="<%= locals.pageName %>>
-    <script>/*to prevent Firefox FOUC, this must be here*/ 0</script>
+<body data-page="<%= locals.pageName %>">
+    <script nonce="<%= nonce %>">/*to prevent Firefox FOUC, this must be here*/ 0</script>
     <%- include('../partials/header.ejs') %>        
     <%- include('../partials/header-buttons.ejs') %> 
 

@@ -9,6 +9,8 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')
+const helmet = require('helmet')
+const crypto = require('crypto')
 
 const connectDB = require('./server/config/db')
 
@@ -17,6 +19,52 @@ const PORT = process.env.PORT || 3000
 
 // Connect to DB
 connectDB()
+
+// Use Helmet middleware
+app.use(helmet())
+
+// Set Content Security Policy
+app.use((req, res, next) => {
+    // Generate a new nonce for each request
+    const nonce = crypto.randomBytes(16).toString('base64');
+    
+    // Set the nonce in res.locals so it can be accessed in your views
+    res.locals.nonce = nonce;
+
+    // Define CSP directives
+    const cspDirectives = {
+        'default-src': ["'self'"],
+        'base-uri': ["'none'"],
+        'script-src': [
+            "'self'", 
+            "'nonce-" + nonce + "'",
+            "'unsafe-inline'",
+            "https://www.google.com/recaptcha/",
+            "https://www.gstatic.com"
+        ],
+        'script-src-elem': [
+            "'self'", 
+            "'nonce-" + nonce + "'",
+            "https://www.google.com/recaptcha/",
+            "https://www.gstatic.com"
+        ],
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'img-src': ["'self'", "data:", "https://www.gstatic.com"],
+        'connect-src': ["'self'"],
+        'font-src': ["'self'"],
+        'object-src': ["'none'"],
+        'media-src': ["'self'"],
+        'frame-src': ["https://www.google.com"]
+    };
+
+    // Convert directives object to string
+    const csp = Object.entries(cspDirectives)
+        .map(([key, value]) => `${key} ${value.join(' ')}`)
+        .join('; ');
+
+    res.setHeader('Content-Security-Policy', csp);
+    next();
+});
 
 app.use(express.static('public'))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -35,7 +83,8 @@ app.use(session({
     cookie: { 
         maxAge: 3600000,
         sameSite: 'Lax',
-        secure: true
+        secure: true,
+        httpOnly: true
     }
 }))
 
@@ -46,7 +95,6 @@ app.use(flash())
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg')
     res.locals.error_msg = req.flash('error_msg')
-
     next()
 })
 
