@@ -1184,7 +1184,7 @@ body.dark-mode {
     background: linear-gradient(160deg, #483166, #37275c 20%, #191242 100%);
     background-attachment: fixed;
     margin: 0;
-    color: #fbf3ff;
+    color: #ffffff;
 }
   
 body.dark-mode .glass-bg {

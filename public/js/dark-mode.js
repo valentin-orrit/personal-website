@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body
   const heroImage = document.querySelector('[data-hero-image]')
   
-  const lightModeImage = '/img/hero-image.png'
-  const darkModeImage = '/img/hero-image-dark.png'
+  const lightModeImage = '/img/hero-image.webp'
+  const darkModeImage = '/img/hero-image-dark.webp'
 
   function setDarkMode(isDark) {
       body.classList.toggle('dark-mode', isDark)
