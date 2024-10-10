@@ -2,7 +2,8 @@ const locals = {
     index: {
         pageName: 'index',
         title: 'valentin orrit',
-        description: 'personal website with portfolio and simple blog, created with Nodejs, Express & MongoDB'
+        description: 'personal website with portfolio and simple blog, created with Nodejs, Express & MongoDB',
+        additionalHead: '<link rel="preload" as="image" href="/img/hero-image.webp">'
     },
     portfolio: {
         pageName: 'portfolio',
