@@ -7,31 +7,31 @@ const verifyRecaptcha = require('../mailer/verify-recaptcha')
 const { sendEmail } = require('../mailer/mailer')
 
 /**
- * GET / 
-*/
+ * GET /
+ */
 router.get('', (req, res) => {
-    res.render('index', { locals: locals.index})
+    res.render('index', { locals: locals.index })
 })
 
 /**
  * GET /portfolio
-*/
+ */
 router.get('/portfolio', (req, res) => {
     res.render('portfolio', { locals: locals.portfolio })
 })
 
 /**
  * GET /logbook
-*/
+ */
 router.get('/logbook', async (req, res) => {
     try {
         let perPage = 10
         let page = req.query.page || 1
 
-        const data = await Log.aggregate([ { $sort: { createdAt: -1 } } ])
-        .skip(perPage * page - perPage)
-        .limit(perPage)
-        .exec()
+        const data = await Log.aggregate([{ $sort: { createdAt: -1 } }])
+            .skip(perPage * page - perPage)
+            .limit(perPage)
+            .exec()
 
         const count = await Log.countDocuments()
         const nextPage = parseInt(page) + 1
@@ -41,18 +41,16 @@ router.get('/logbook', async (req, res) => {
             locals: locals.logbook,
             data,
             current: page,
-            nextPage: hasNextPage ? nextPage : null
+            nextPage: hasNextPage ? nextPage : null,
         })
-
     } catch (error) {
         console.log(error)
     }
-    
 })
 
 /**
  * GET /log
-*/
+ */
 router.get('/log/:id', async (req, res) => {
     try {
         let slug = req.params.id
@@ -65,24 +63,29 @@ router.get('/log/:id', async (req, res) => {
     }
 })
 
-
 /**
  * GET /contact
-*/
+ */
 router.get('/contact', (req, res) => {
-    res.render('contact', { 
-        locals: locals.contact, 
+    res.render('contact', {
+        locals: locals.contact,
         siteKey: process.env.GOOGLE_CAPTCHA_SITE_KEY,
         success_msg: res.locals.success_msg,
-        error_msg: res.locals.error_msg
+        error_msg: res.locals.error_msg,
     })
 })
 
 /**
  * POST /send email
-*/
+ */
 router.post('/send-email', async (req, res) => {
-    const { name, email, subject, message, 'g-recaptcha-response': recaptchaToken } = req.body
+    const {
+        name,
+        email,
+        subject,
+        message,
+        'g-recaptcha-response': recaptchaToken,
+    } = req.body
 
     if (!name || !email || !subject || !message || !recaptchaToken) {
         req.flash('error_msg', 'Missing required fields')
@@ -94,7 +97,10 @@ router.post('/send-email', async (req, res) => {
         const isRecaptchaValid = verifyRecaptcha(recaptchaToken)
 
         if (!isRecaptchaValid) {
-            req.flash('error_msg', 'reCAPTCHA verification failed. Please try again.')
+            req.flash(
+                'error_msg',
+                'reCAPTCHA verification failed. Please try again.'
+            )
             return res.redirect('/contact')
         }
 
@@ -105,7 +111,7 @@ router.post('/send-email', async (req, res) => {
         // Send email using Mailjet
         const emailSent = await sendEmail({
             to: process.env.ADMIN_EMAIL,
-            name: "Contact",
+            name: 'Contact',
             subject: `New Contact Form Submission: ${subject}`,
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
             html: `<h3>New Contact Form</h3>
@@ -115,13 +121,16 @@ router.post('/send-email', async (req, res) => {
                 <p><strong>Message:</strong> ${message}</p>`,
             sender: {
                 email: email,
-                name: name
-            }
+                name: name,
+            },
         })
         if (emailSent) {
             req.flash('success_msg', 'Your message has been sent successfully!')
         } else {
-            req.flash('error_msg', 'Failed to send email. Please try again later.')
+            req.flash(
+                'error_msg',
+                'Failed to send email. Please try again later.'
+            )
         }
 
         res.redirect('/email-sent')
@@ -134,35 +143,45 @@ router.post('/send-email', async (req, res) => {
 
 /**
  * GET /email-sent
-*/
+ */
 router.get('/email-sent', (req, res) => {
-    res.render('email-sent', { locals: locals.emailSent})
+    res.render('email-sent', { locals: locals.emailSent })
 })
 
 /**
  * PROJECTS
-*/
+ */
 
 /**
  * GET /live-project-manager
-*/
+ */
 router.get('/live-project-manager', (req, res) => {
-    res.render('projects/live-project-manager', { locals: locals.liveProjectManager})
+    res.render('projects/live-project-manager', {
+        locals: locals.liveProjectManager,
+    })
 })
 
 /**
  * GET /hotefinder
-*/
+ */
 router.get('/hotefinder', (req, res) => {
-    res.render('projects/hotefinder', { locals: locals.hotefinder})
+    res.render('projects/hotefinder', { locals: locals.hotefinder })
 })
 
 /**
  * GET /threejs-double-galaxy
-*/
+ */
 router.get('/threejs-double-galaxy', (req, res) => {
-    res.render('projects/threejs-double-galaxy', { locals: locals.doubleGalaxy})
+    res.render('projects/threejs-double-galaxy', {
+        locals: locals.doubleGalaxy,
+    })
 })
 
+/**
+ * GET /threejs-double-galaxy
+ */
+router.get('/culture-shuffle', (req, res) => {
+    res.render('projects/culture-shuffle', { locals: locals.cultureShuffle })
+})
 
 module.exports = router
