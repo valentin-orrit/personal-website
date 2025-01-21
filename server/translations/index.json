@@ -1,13 +1,13 @@
 {
     "en": {
-        "welcome":"welcome",
+        "welcome": "🖐️ hello",
         "name": "I am Valentin",
         "dev": "full stack developer",
         "projects": "projects",
         "tools": "tools and technologies:"
     },
     "fr": {
-        "welcome":"bienvenue",
+        "welcome": "🖐️ hello",
         "name": "je suis Valentin",
         "dev": "développeur full stack",
         "projects": "projets",
