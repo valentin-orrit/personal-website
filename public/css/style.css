@@ -206,7 +206,8 @@ h3 {
 }
 
 .projects-btn:hover {
-    color: var(--gray);
+    color: #fff;
+    background-color: #420f60;
 }
 
 .projects-btn .btn-text {
@@ -1185,7 +1186,8 @@ body.dark-mode .btn {
 }
 
 body.dark-mode .btn:hover {
-    color: #e6e6e6;
+    background-color: #cf4ac4;
+    /* color: var(--black); */
 }
 
 body.dark-mode a {
@@ -1193,7 +1195,7 @@ body.dark-mode a {
 }
 
 body.dark-mode a:hover {
-    color: #d0c0fc;
+    color: #fff;
 }
 
 body.dark-mode .dark-mode-toggle .moon {
