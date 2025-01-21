@@ -1,0 +1,12 @@
+{
+    "en": {
+        "description-1": "A React app designed to help users discover and favorite dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines, including nearby restaurants, bakeries, and cafes",
+        "description-2": "",
+        "description-3": ""
+    },
+    "fr": {
+        "description-1": "React app conçue pour aider les utilisateurs à découvrir et à liker des établissements de restauration adaptés aux cuisines végétarienne, vegan, sans gluten, sans lactose, halal et casher, y compris les restaurants, boulangeries et cafés à proximité.",
+        "description-2": "",
+        "description-3": ""
+    }
+}
