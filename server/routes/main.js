@@ -178,10 +178,17 @@ router.get('/threejs-double-galaxy', (req, res) => {
 })
 
 /**
- * GET /threejs-double-galaxy
+ * GET /culture shuffle
  */
 router.get('/culture-shuffle', (req, res) => {
     res.render('projects/culture-shuffle', { locals: locals.cultureShuffle })
+})
+
+/**
+ * GET /Eat Around
+ */
+router.get('/eat-around', (req, res) => {
+    res.render('projects/eat-around', { locals: locals.eataround })
 })
 
 module.exports = router

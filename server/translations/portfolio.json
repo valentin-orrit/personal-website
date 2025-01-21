@@ -4,13 +4,15 @@
         "ableton-description": "CLI App which finds ableton live projects in a given directory, extract the pertinent data and store it in a JSON database. ",
         "hotefinder-description": "Platform that connects concierges and property owners for managing short-term rentals. Allows the creation and updating of tasks to facilitate the concierge's work and automatically keep the owner informed.",
         "galaxies-description": "3D representation of galaxies in Three.js, adapted from an exercise in the Three.js Journey course by Bruno Simon.",
-        "culture-shuffle-description": "Culture quiz application made with React, using the Open Trivia API to provide questions on music, cinema, fine arts, and literature."
+        "culture-shuffle-description": "Culture quiz application made with React, using the Open Trivia API to provide questions on music, cinema, fine arts, and literature.",
+        "eat-around-description": "A React app designed to help users discover and favorite dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines, including nearby restaurants, bakeries, and cafes."
     },
     "fr": {
         "infos": "d'infos",
         "ableton-description": "App CLI permettant de trouver des projets ableton live dans un directory, en extraire les données pertinantes et les stocker dans une base de donnée JSON.",
         "hotefinder-description": "Plateforme permettant de mettre en relation concierges et propriétaires pour la gestion de locations courtes durées. Permet la création et la mise à jour de missions pour faciliter le travail du concierge et tenir à jour automatiquement le propriétaire.",
         "galaxies-description": "Représentation 3D de galaxies en threejs, adapté d'un exercice de la formation threejs journey de Bruno Simon",
-        "culture-shuffle-description": "Application de quiz culture faite avec React, utilisant Open Trivia API pour proposer des questions sur la musique, le cinéma, les arts classiques et la littérature."
+        "culture-shuffle-description": "Application de quiz culture faite avec React, utilisant Open Trivia API pour proposer des questions sur la musique, le cinéma, les arts classiques et la littérature.",
+        "eat-around-description": "React app conçue pour aider les utilisateurs à découvrir et à liker des établissements de restauration adaptés aux cuisines végétarienne, vegan, sans gluten, sans lactose, halal et casher, y compris les restaurants, boulangeries et cafés à proximité."
     }
 }

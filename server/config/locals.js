@@ -66,6 +66,12 @@ const locals = {
         description:
             'Culture quiz application made with React, using the Open Trivia API to provide questions on music, cinema, fine arts, and literature.',
     },
+    eataround: {
+        pageName: 'eat-around',
+        title: 'Eat Around - valentin orrit & Gaultier Patrice',
+        description:
+            'A React app designed to help users discover and favorite dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines, including nearby restaurants, bakeries, and cafes.',
+    },
 
     // Get individual locals for each log entry
     getLogLocals: function (data) {
