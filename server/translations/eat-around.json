@@ -1,12 +1,14 @@
 {
     "en": {
-        "description-1": "A React app designed to help users discover and favorite dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines, including nearby restaurants, bakeries, and cafes",
-        "description-2": "",
-        "description-3": ""
+        "description-1": "A React app designed with Gaultier Patrice to help users discover and register dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines.",
+        "description-2": "Eat Around allows users to search for an address or enable Google Maps geolocation to find nearby restaurants, bakeries, and cafes that match the selected filters. When logged in, users can also enable or disable specific filters and add or remove places from their favorites list.",
+        "description-3": "Eat Around was designed to familiarize us with the Google Maps API and to reinforce our knowledge of the JavaScript ecosystem. The frontend was built using React, Vite, React Router, Shadcn, and Tailwind. The backend leverages Node.js, Express, Prisma, and Postgres through Neon. Testing was conducted with Jest, Vitest, and GitHub Actions for automation.",
+        "description-4": "During the development of this app, I focused primarily on creating and configuring the repository, the backend, the frontend-backend connection, UX, testing, deployment, and managing various external services such as Clerk and AWS SES. This project allowed me to learn a great deal and validate numerous skills in managing a Full-Stack React and JavaScript project."
     },
     "fr": {
-        "description-1": "React app conçue pour aider les utilisateurs à découvrir et à liker des établissements de restauration adaptés aux cuisines végétarienne, vegan, sans gluten, sans lactose, halal et casher, y compris les restaurants, boulangeries et cafés à proximité.",
-        "description-2": "",
-        "description-3": ""
+        "description-1": "React app conçue avec Gaultier Patrice pour aider les utilisateurs à découvrir et à enregistrer des établissements de restauration adaptés aux cuisines végétarienne vegan, sans gluten, sans lactose, halal et casher.",
+        "description-2": "Eat Around permet à l'utilisateur de faire une recherche d'adresse ou d'activer la géolocalisation de Google Maps pour rechercher des restaurants, boulangeries et cafés à proximité correspondants au filtres sélectionnés. Lorsque l'utilisateur est connecté, il peut également activer ou désactiver certains filtres et ajouter ou supprimer des lieux à sa liste de favoris.",
+        "description-3": "Eat Around a été imaginé pour nous familliariser avec l'API Google Maps et confirmer nos connaissances avec l'eco-système javascript. Le frontend a été construit avec React, Vite, React-Router, Shadcn et Tailwind. Le backend avec Nodejs, Express, Prisma et Postgres via Neon. Les tests ont étés réalisé avec Jest, Vitest et Github Actions pour l'automatisation.",
+        "description-4": "Lors du développement de cette app je me suis surtout investi sur la création et configuration du repo, le backend, la connexion frontend-backend, l'UX, les tests, le déploiement et la gestion des divers services externes comme Clerk, AWS SES. Ce projet m'aura permit d'apprendre énormément et de valider beaucoup de compétences dans la gestion d'un projet Full-Stack React et Javascript."
     }
 }
