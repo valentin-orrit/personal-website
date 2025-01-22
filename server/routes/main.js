@@ -191,4 +191,11 @@ router.get('/eat-around', (req, res) => {
     res.render('projects/eat-around', { locals: locals.eataround })
 })
 
+/**
+ * GET /super secret samples
+ */
+router.get('/super-secret-samples', (req, res) => {
+    res.render('projects/eat-around', { locals: locals.eataround })
+})
+
 module.exports = router

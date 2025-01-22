@@ -781,7 +781,7 @@ img {
     padding-bottom: 10px;
 }
 
-.project-page h4 {
+h4 {
     display: none;
     opacity: 0.7;
 }
@@ -904,7 +904,22 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 10px 20px 0 0;
+    padding: 20px 20px 0 0;
+    border-radius: var(--border-radius);
+}
+
+.contact-send-btn:hover input {
+    color: #522361;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 20px;
+    border: 1px solid #ccc;
 }
 
 /*
@@ -1181,7 +1196,7 @@ img {
         padding: 0 20rem;
     }
 
-    .project-page h4 {
+    h4 {
         display: block;
     }
 }
