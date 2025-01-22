@@ -394,6 +394,19 @@ img {
     width: var(--icon-md);
 }
 
+.tech-icons-list-project {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.tech-icons-list-project ul li img {
+    width: var(--icon-sm);
+    margin-left: 10px;
+}
+
 .tech-second-row {
     display: flex;
     flex-direction: row;
@@ -752,7 +765,6 @@ img {
     flex-direction: row;
     margin: 0 auto;
     padding: 0;
-    margin-bottom: 10px;
     justify-content: center;
     align-items: center;
 }
