@@ -383,6 +383,7 @@ img {
     align-items: center;
     padding: 10px 10px;
     z-index: 1;
+    overflow: visible;
 }
 
 .tech-first-row {
@@ -402,9 +403,16 @@ img {
     padding-top: 10px;
 }
 
+.tech-icons-list-project ul {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
 .tech-icons-list-project ul li img {
     width: var(--icon-sm);
-    margin-left: 10px;
+    margin: 0 10px;
+    z-index: 1;
 }
 
 .tech-second-row {
@@ -415,6 +423,7 @@ img {
 
 .tech-icons-list li {
     padding: 0 10px;
+    z-index: 1;
 }
 
 .tech-icon {
@@ -445,19 +454,19 @@ img {
 
 .tooltip:before {
     content: attr(data-text);
+    position: absolute;
     top: 100%;
+    left: 50%;
     transform: translateX(-50%);
     margin-top: 8px;
-    width: max-content;
-    max-width: 200px;
-    padding: 6px 10px;
-    border-radius: 10px;
-    background: var(--black);
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: var(--black);
     color: #fff;
-    text-align: center;
-    font-size: var(--font-size-sm);
-    line-height: 1.4;
+    font-size: 12px;
     white-space: nowrap;
+    z-index: 1000;
+    display: none;
 }
 
 .tooltip:after {
@@ -760,11 +769,29 @@ img {
     padding-bottom: 20px;
 }
 
+.project-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.project-page h2 {
+    padding-bottom: 10px;
+}
+
+.project-page h4 {
+    display: none;
+    opacity: 0.7;
+}
+
 .project-links-list {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
-    padding: 0;
+    margin: 10px auto;
+    padding: 10px 0;
+    padding-left: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -1152,6 +1179,10 @@ img {
     .footer {
         flex-direction: row;
         padding: 0 20rem;
+    }
+
+    .project-page h4 {
+        display: block;
     }
 }
 
