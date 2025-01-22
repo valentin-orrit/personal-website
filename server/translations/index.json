@@ -4,13 +4,19 @@
         "name": "I am Valentin,",
         "dev": "full stack developer",
         "projects": "projects",
-        "tools": "tools and technologies:"
+        "tools": "tools and technologies:",
+        "culture-shuffle-description": "Culture quiz application made with React, using the Open Trivia API to provide questions on music, cinema, fine arts, and literature.",
+        "eat-around-description": "Full-stack React Nodejs app designed to help users discover and favorite dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines, including nearby restaurants, bakeries, and cafes.",
+        "super-secret-samples-description": "[Work In Progress] SAAS Remix app of high quality audio samples to download for professional music producers."
     },
     "fr": {
         "welcome": "🖐️ hello!",
         "name": "je suis Valentin,",
         "dev": "développeur full stack",
         "projects": "projets",
-        "tools": "outils et technologies :"
+        "tools": "outils et technologies :",
+        "culture-shuffle-description": "Application de quiz culture faite avec React, utilisant Open Trivia API pour proposer des questions sur la musique, le cinéma, les arts classiques et la littérature.",
+        "eat-around-description": "App Full-stack React et Nodejs conçue pour aider les utilisateurs à découvrir et à liker des établissements de restauration adaptés aux cuisines végétarienne, vegan, sans gluten, sans lactose, halal et casher, y compris les restaurants, boulangeries et cafés à proximité.",
+        "super-secret-samples-description": "[Work In Progress] SAAS Remix app de téléchargement de samples audio pour producteurs de musique professionnels."
     }
 }
