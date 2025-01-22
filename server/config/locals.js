@@ -68,9 +68,15 @@ const locals = {
     },
     eataround: {
         pageName: 'eat-around',
-        title: 'Eat Around - valentin orrit & Gaultier Patrice',
+        title: 'eat around - valentin orrit & Gaultier Patrice',
         description:
             'A React app designed to help users discover and favorite dining establishments catering to vegetarian, vegan, gluten-free, lactose-free, halal, and kosher cuisines, including nearby restaurants, bakeries, and cafes.',
+    },
+    superSecretSamples: {
+        pageName: 'super-secret-samples',
+        title: 'super secret samples - valentin orrit',
+        description:
+            '[Work In Progress] SAAS Remix app of high quality audio samples to download for professional music producers.',
     },
 
     // Get individual locals for each log entry
