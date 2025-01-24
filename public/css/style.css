@@ -618,6 +618,14 @@ img {
     justify-content: center;
 }
 
+.header-logo-full {
+    display: none;
+}
+
+.header-logo-initials {
+    display: inline;
+}
+
 .header-nav {
     grid-area: header-nav;
     display: flex;
@@ -1078,6 +1086,16 @@ h4 {
 
     .hero-glass-bg {
         width: 50%;
+    }
+}
+
+@media only screen and (min-width: 878px) {
+    .header-logo-full {
+        display: inline;
+    }
+
+    .header-logo-initials {
+        display: none;
     }
 }
 
