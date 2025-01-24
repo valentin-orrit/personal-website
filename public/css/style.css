@@ -24,6 +24,16 @@
     --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     --glass-blur: blur(9px);
     --glass-border: 1px solid rgba(255, 255, 255, 0.17);
+
+    --circle-gradient: linear-gradient(
+        335deg,
+        hsl(248deg 54% 62%) 0%,
+        hsl(255deg 57% 68%) 2%,
+        hsl(287deg 46% 71%) 14%,
+        hsl(348deg 70% 88%) 47%,
+        hsl(0deg 62% 95%) 84%,
+        hsl(0deg 0% 100%) 100%
+    );
 }
 
 html {
@@ -76,7 +86,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: linear-gradient(130deg, #d8e3ff, #f5e2ff, #fd98ff);
+    background: var(--circle-gradient);
     z-index: -10;
 }
 
@@ -85,7 +95,7 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: linear-gradient(130deg, #d8e3ff, #f5e2ff, #fd98ff);
+    background: var(--circle-gradient);
     filter: blur(8px);
     z-index: -100;
 }
