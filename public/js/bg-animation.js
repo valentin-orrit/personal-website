@@ -63,7 +63,7 @@ function getCircleSpeed(index) {
     // const speeds = [2, 2, 2, 2, 2, 2]
     const speeds = [0.2, 0.3, 0.4, 0.6, 0.8, 0.3]
 
-    const speedMult = speeds.map((speed) => speed * 0.5)
+    const speedMult = speeds.map((speed) => speed * 0.2)
 
     return speedMult[index % speeds.length]
 }
