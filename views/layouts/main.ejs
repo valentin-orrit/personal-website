@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    <title><%= locals.title %></title>
-    <meta name="description" content="<%= locals.description %>">
-    <%- locals.additionalHead || '' %>
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" nonce="<%= nonce %>" async defer src="/js/prevent-fouc.js"></script>
-    <script type="text/javascript" nonce="<%= nonce %>" async defer src="/js/bg-animation.js"></script>
-    <script type="text/javascript" nonce="<%= nonce %>" defer src="/js/dark-mode.js"></script>
-    <script nonce="<%= nonce %>" defer src="/js/language-toggle.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+        <title><%= locals.title %></title>
+        <meta name="description" content="<%= locals.description %>" />
+        <%- locals.additionalHead || '' %>
+        <link rel="stylesheet" href="/css/style.css" />
+        <script
+            type="text/javascript"
+            nonce="<%= nonce %>"
+            async
+            defer
+            src="/js/prevent-fouc.js"
+        ></script>
+        <script
+            type="text/javascript"
+            nonce="<%= nonce %>"
+            async
+            defer
+            src="/js/bg-animation.js"
+        ></script>
+        <script
+            type="text/javascript"
+            nonce="<%= nonce %>"
+            defer
+            src="/js/dark-mode.js"
+        ></script>
+        <script
+            nonce="<%= nonce %>"
+            defer
+            src="/js/language-toggle.js"
+        ></script>
+    </head>
 
-<body data-page="<%= locals.pageName %>">
-    <script nonce="<%= nonce %>">/*to prevent Firefox FOUC, this must be here*/ 0</script>
-    <%- include('../partials/header.ejs') %>   
-    <%- include('../partials/header-buttons.ejs') %> 
-    
-    <div class="container"> 
-        <div class="circles-bg">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-            <div class="circle circle-4"></div>
-            <div class="far-circle far-circle-1"></div>
-            <div class="far-circle far-circle-2"></div>
-            <div class="far-circle far-circle-3"></div>
-            <div class="far-circle far-circle-4"></div>
+    <body data-page="<%= locals.pageName %>">
+        <script nonce="<%= nonce %>">
+            /*to prevent Firefox FOUC, this must be here*/ 0
+        </script>
+        <%- include('../partials/header.ejs') %> <%-
+        include('../partials/header-buttons.ejs') %>
+
+        <div class="container">
+            <div class="circles-bg">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+                <div class="circle circle-4"></div>
+                <div class="far-circle far-circle-1"></div>
+                <div class="far-circle far-circle-2"></div>
+                <div class="far-circle far-circle-3"></div>
+                <div class="far-circle far-circle-4"></div>
+            </div>
+
+            <main class="main"><%- body %></main>
         </div>
-      
-        
-        <main class="main">
-            <%- body %>
-        </main>
-
-    </div>
-    <%- include('../partials/footer.ejs') %>
-    
-</body>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 </html>

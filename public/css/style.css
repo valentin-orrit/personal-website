@@ -53,6 +53,7 @@ body {
     background: rgb(237, 226, 245);
     background: linear-gradient(
         160deg,
+        #eeffff7e,
         #dcfeffad,
         #95eef2ad 20%,
         #7758fdad 100%
@@ -101,7 +102,7 @@ body {
 }
 
 .circle-1 {
-    top: -10%;
+    top: 10%;
     left: 13%;
     transform: scale(0.7);
 }

@@ -1,51 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const circles = document.querySelectorAll(".circle, .far-circle")
+document.addEventListener('DOMContentLoaded', () => {
+    const circles = document.querySelectorAll('.circle, .far-circle')
 
     circles.forEach((circle, index) => {
-        // Disable CSS animation
-        circle.style.animation = 'none'
-
-        // Get stored position or generate random start position
-        let y = sessionStorage.getItem(`circle-${index}-y`)
-        if (y === null) {
-            y = Math.random() * window.innerHeight
-        } else {
-            y = parseFloat(y)
+        const animationConfig = {
+            startY: getStoredPosition(index),
+            direction: getStoredDirection(index),
+            speed: getCircleSpeed(index),
+            amplitude: getCircleAmplitude(index),
         }
 
-        // Set initial position
-        circle.style.transform = `translateY(${y}px) ${getScale(circle)}`
+        circle.style.transform = `translateY(${
+            animationConfig.startY
+        }px) ${getScale(circle)}`
 
-        // Determine direction (up or down)
-        let direction = sessionStorage.getItem(`circle-${index}-direction`) || (Math.random() > 0.5 ? 1 : -1)
-        direction = parseInt(direction)
+        function animateCircle() {
+            const time = performance.now() * 0.001
 
-        // Set speed for each circle (you can customize these values)
-        const speed = getCircleSpeed(index)
-
-        // Animation function
-        function animate() {
-            y += direction * speed // Use individual speed
-
-            // Reverse direction at boundaries
-            if (y > window.innerHeight + 100 || y < -100) {
-                direction *= -1
-                sessionStorage.setItem(`circle-${index}-direction`, direction.toString())
-            }
+            const y =
+                animationConfig.startY +
+                Math.sin(time * animationConfig.speed) *
+                    animationConfig.amplitude
 
             circle.style.transform = `translateY(${y}px) ${getScale(circle)}`
+
             sessionStorage.setItem(`circle-${index}-y`, y.toString())
 
-            requestAnimationFrame(animate)
+            requestAnimationFrame(animateCircle)
         }
 
-        animate()
+        animateCircle()
     })
 })
 
-// Helper function to get the scale transform from the original class
+function getStoredPosition(index) {
+    const storedY = sessionStorage.getItem(`circle-${index}-y`)
+    return storedY !== null
+        ? parseFloat(storedY)
+        : Math.random() * window.innerHeight
+}
+
+function getStoredDirection(index) {
+    const storedDirection = sessionStorage.getItem(`circle-${index}-direction`)
+    return storedDirection !== null
+        ? parseInt(storedDirection)
+        : Math.random() > 0.5
+        ? 1
+        : -1
+}
+
 function getScale(element) {
-    const transform = window.getComputedStyle(element).getPropertyValue('transform')
+    const transform = window
+        .getComputedStyle(element)
+        .getPropertyValue('transform')
     if (transform && transform !== 'none') {
         const matrix = new DOMMatrix(transform)
         return `scale(${matrix.a}, ${matrix.d})`
@@ -53,8 +59,17 @@ function getScale(element) {
     return ''
 }
 
-// Helper function to get speed based on circle index
 function getCircleSpeed(index) {
-    const speeds = [0.3, 0.5, 0.25, 0.45, 0.7, 0.6]
-    return speeds[index % speeds.length]
+    // const speeds = [2, 2, 2, 2, 2, 2]
+    const speeds = [0.2, 0.3, 0.4, 0.6, 0.8, 0.3]
+
+    const speedMult = speeds.map((speed) => speed * 0.5)
+
+    return speedMult[index % speeds.length]
+}
+
+function getCircleAmplitude(index) {
+    const amplitudes = [300, 200, 300, 200, 300, 200]
+    // const amplitudes = [50, 70, 40, 60, 80, 60]
+    return amplitudes[index % amplitudes.length]
 }
