@@ -5,7 +5,7 @@ const locals = {
         description:
             'personal website with portfolio and simple blog, created with Nodejs, Express & MongoDB',
         additionalHead:
-            '<link rel="preload" as="image" href="/img/profile-picture-012025.webp">',
+            '<link rel="preload" as="image" href="/img/TDMovieOut.0.gif">',
     },
     portfolio: {
         pageName: 'portfolio',

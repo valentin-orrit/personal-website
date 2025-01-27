@@ -727,7 +727,6 @@ img {
 
 .dark-mode-toggle {
     position: relative;
-    top: 10px;
 }
 
 /* 
@@ -1135,10 +1134,6 @@ h4 {
         padding-left: 10px;
     }
 
-    .header-buttons {
-        margin-bottom: 30px;
-    }
-
     .footer {
         padding: 0 10rem;
     }
@@ -1169,7 +1164,10 @@ h4 {
 @media only screen and (min-width: 1500px) {
     .header {
         padding: 0 20rem;
-        margin-bottom: 70px;
+    }
+
+    .main {
+        margin: 0;
     }
 }
 
@@ -1187,7 +1185,7 @@ h4 {
     }
 
     .main {
-        padding: 10px;
+        margin: 10px 0;
     }
 
     .circle-2 {
@@ -1262,7 +1260,11 @@ h4 {
 
     .hero-text {
         text-align: end;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
+    }
+
+    #eat-around-text {
+        margin-top: -1rem;
     }
 
     .projects-btn {
