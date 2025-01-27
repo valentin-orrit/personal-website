@@ -345,6 +345,17 @@ img {
     margin-bottom: 10px;
 }
 
+.profile-image {
+    max-height: 400px;
+    max-width: 90%;
+    filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    transition: opacity 3s ease-in-out;
+    width: auto;
+    height: auto;
+}
+
 .hero-image {
     max-height: 400px;
     max-width: 90%;
@@ -1208,6 +1219,10 @@ h4 {
         text-align: end;
         margin-top: 2rem;
     }
+
+    /* .profile-image {
+        margin: 0 8.5rem 0 0;
+    } */
 
     .projects-btn {
         margin-top: -20px;
