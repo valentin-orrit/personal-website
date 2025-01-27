@@ -768,14 +768,8 @@ img {
     border-radius: var(--border-radius);
     overflow-y: auto;
     text-align: justify;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.85);
     min-height: 10px;
-}
-
-/* Explicitly define height for the <p> tag */
-.hover-text p {
-    min-height: 1em; /* Ensures the paragraph has height */
 }
 
 .image-container:hover .hover-text {
