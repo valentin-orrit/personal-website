@@ -623,6 +623,11 @@ img {
     margin-top: 20px;
 }
 
+.contact-btn:hover {
+    color: #fff;
+    background-color: #484855;
+}
+
 .send-icon {
     margin-top: 4px;
     margin-right: -4px;
@@ -1374,7 +1379,13 @@ body.dark-mode .contact-btn {
 }
 
 body.dark-mode .btn:hover {
-    background-color: rgba(72, 72, 85, 1) 75%;
+    background-color: #242400;
+    color: #fcfcff;
+}
+
+body.dark-mode .contact-btn:hover {
+    background-color: #242400;
+    color: #fcfcff;
 }
 
 body.dark-mode a {
@@ -1395,6 +1406,12 @@ body.dark-mode .dark-mode-toggle .sun {
 
 body.dark-mode .footer {
     color: #bdbdbd;
+}
+
+body.dark-mode .contact-send-btn input:hover {
+    color: #fcfcff;
+    background-color: #242400;
+    border-color: rgba(0, 0, 0, 0);
 }
 
 /* dark mode for svg icons */
