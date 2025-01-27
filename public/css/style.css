@@ -27,9 +27,9 @@
 
     --circle-gradient: linear-gradient(
         350deg,
-        rgba(36, 36, 0, 1) 10%,
-        rgba(216, 216, 255, 1) 67%,
-        rgb(244, 244, 245) 100%
+        rgba(36, 36, 0, 1) 0%,
+        rgba(216, 216, 255, 1) 57%,
+        rgb(244, 244, 245) 90%
     );
 }
 
@@ -51,8 +51,8 @@ body {
     background: linear-gradient(
         350deg,
         rgba(36, 36, 0, 1) 0%,
-        rgba(72, 72, 85, 1) 39%,
-        rgba(206, 206, 230, 1) 84%,
+        rgba(72, 72, 85, 1) 19%,
+        rgba(206, 206, 230, 1) 44%,
         rgba(252, 252, 255, 1) 100%
     );
     background-attachment: fixed;
@@ -215,7 +215,7 @@ h3 {
 
 .projects-btn:hover {
     color: #fff;
-    background-color: #420f60;
+    background-color: #484855;
 }
 
 .projects-btn .btn-text {
@@ -1331,7 +1331,13 @@ h4 {
 
 /* Dark mode styles */
 body.dark-mode {
-    background: linear-gradient(160deg, #483166, #37275c 20%, #191242 100%);
+    background: linear-gradient(
+        351deg,
+        rgb(5, 1, 12) 62%,
+        rgb(78, 72, 85) 75%,
+        rgba(206, 206, 230, 1) 93%,
+        rgba(252, 252, 255, 1) 100%
+    );
     background-attachment: fixed;
     margin: 0;
     color: #ffffff;
@@ -1344,7 +1350,13 @@ body.dark-mode .glass-bg {
 
 body.dark-mode .circle,
 body.dark-mode .far-circle {
-    background: linear-gradient(140deg, #c783c1, #522361, #0f3460);
+    background: linear-gradient(
+        351deg,
+        rgba(36, 36, 0, 1) 62%,
+        rgba(72, 72, 85, 1) 75%,
+        rgba(206, 206, 230, 1) 93%,
+        rgba(252, 252, 255, 1) 100%
+    );
 }
 
 body.dark-mode .btn {
@@ -1353,7 +1365,7 @@ body.dark-mode .btn {
 }
 
 body.dark-mode .btn:hover {
-    background-color: #cf4ac4;
+    background-color: #cecee6;
     /* color: var(--black); */
 }
 
