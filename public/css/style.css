@@ -32,7 +32,7 @@
         rgba(36, 36, 0, 1) 0%,
         rgba(24, 24, 54, 1) 6%,
         rgba(72, 72, 85, 1) 19%,
-        rgba(232, 232, 255, 1) 53%,
+        rgba(232, 232, 255, 1) 73%,
         rgba(252, 252, 255, 1) 100%
     );
 }
@@ -178,10 +178,6 @@ textarea {
 a {
     color: inherit;
     text-decoration: none;
-}
-
-a:hover {
-    color: var(--gray);
 }
 
 /* Titles */
@@ -616,7 +612,6 @@ img {
 .contact {
     display: flex;
     justify-content: center;
-    width: 95%;
     margin-top: 30px;
 }
 
@@ -663,6 +658,10 @@ img {
     justify-content: center;
 }
 
+.header-logo:hover {
+    text-decoration: underline;
+}
+
 .header-logo-full {
     display: none;
 }
@@ -692,19 +691,14 @@ img {
     margin: 0 10px;
 }
 
-.header-list li a {
-    text-decoration: none;
+.header-list li a:hover {
+    text-decoration: underline;
 }
 
 .contact-link {
     grid-area: contact-link;
     display: flex;
     justify-content: center;
-    color: #fff;
-}
-
-.contact-link:hover {
-    color: #f5e2ff;
 }
 
 /* 
@@ -1003,8 +997,10 @@ h4 {
     border-radius: var(--border-radius);
 }
 
-.contact-send-btn:hover input {
-    color: #522361;
+.contact-send-btn input:hover {
+    color: #fff;
+    background-color: #484855;
+    border-color: rgba(0, 0, 0, 0);
 }
 
 .contact-form label {
@@ -1385,8 +1381,8 @@ body.dark-mode a {
     color: rgba(24, 24, 54, 1) 6%;
 }
 
-body.dark-mode a:hover {
-    color: #242400;
+body.dark-mode header-list a:hover {
+    text-decoration: underline;
 }
 
 body.dark-mode .dark-mode-toggle .moon {
