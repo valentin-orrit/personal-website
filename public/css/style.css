@@ -750,6 +750,10 @@ img {
     margin: 0 4px;
 }
 
+.socials-icon-footer {
+    filter: brightness(3);
+}
+
 /* 
     Portfolio
 */
