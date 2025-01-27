@@ -316,6 +316,13 @@ img {
     z-index: -1;
 }
 
+.project-glass-bg {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+}
+
 .hero-content {
     display: flex;
     flex-direction: column-reverse;
@@ -762,6 +769,13 @@ img {
     overflow-y: auto;
     text-align: justify;
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    min-height: 10px;
+}
+
+/* Explicitly define height for the <p> tag */
+.hover-text p {
+    min-height: 1em; /* Ensures the paragraph has height */
 }
 
 .image-container:hover .hover-text {
@@ -1219,10 +1233,6 @@ h4 {
         text-align: end;
         margin-top: 2rem;
     }
-
-    /* .profile-image {
-        margin: 0 8.5rem 0 0;
-    } */
 
     .projects-btn {
         margin-top: -20px;
