@@ -13,6 +13,8 @@
     --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
     --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
+    --transition: filter 0.5s ease-in-out, opacity 3s ease-in-out;
+
     --icon-sm: 40px;
     --icon-md: 60px;
     --icon-lg: 90px;
@@ -28,8 +30,10 @@
     --circle-gradient: linear-gradient(
         350deg,
         rgba(36, 36, 0, 1) 0%,
-        rgba(216, 216, 255, 1) 57%,
-        rgb(244, 244, 245) 90%
+        rgba(24, 24, 54, 1) 6%,
+        rgba(72, 72, 85, 1) 19%,
+        rgba(232, 232, 255, 1) 53%,
+        rgba(252, 252, 255, 1) 100%
     );
 }
 
@@ -47,12 +51,15 @@ body {
     color: var(--black);
     font-size: var(--font-size-base);
 
+    transition: var(--transition);
+
     background: rgb(36, 36, 0);
     background: linear-gradient(
         350deg,
         rgba(36, 36, 0, 1) 0%,
+        rgba(24, 24, 54, 1) 6%,
         rgba(72, 72, 85, 1) 19%,
-        rgba(206, 206, 230, 1) 44%,
+        rgba(232, 232, 255, 1) 53%,
         rgba(252, 252, 255, 1) 100%
     );
     background-attachment: fixed;
@@ -77,6 +84,7 @@ body {
     overflow: hidden;
     z-index: -1;
     filter: blur(1px);
+    transition: var(--transition);
 }
 
 .circle {
@@ -85,6 +93,7 @@ body {
     height: 300px;
     border-radius: 50%;
     background: var(--circle-gradient);
+    transition: var(--transition);
     z-index: -10;
 }
 
@@ -94,6 +103,7 @@ body {
     height: 100px;
     border-radius: 50%;
     background: var(--circle-gradient);
+    transition: var(--transition);
     filter: blur(8px);
     z-index: -100;
 }
@@ -368,9 +378,8 @@ img {
     max-width: 90%;
     filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25));
     overflow: hidden;
-    /* border: 2px solid rgba(255, 255, 255, 0.05); */
     border-radius: var(--border-radius);
-    transition: opacity 3s ease-in-out;
+    transition: var(--transition);
     width: auto;
     height: auto;
 }
@@ -622,11 +631,6 @@ img {
 .send-icon {
     margin-top: 4px;
     margin-right: -4px;
-}
-
-.contact-btn:hover .send-icon {
-    animation: bigger 1s alternate infinite ease-in-out;
-    filter: hue-rotate(90deg);
 }
 
 @keyframes bigger {
@@ -1333,7 +1337,7 @@ h4 {
 body.dark-mode {
     background: linear-gradient(
         351deg,
-        rgb(5, 1, 12) 62%,
+        rgb(22, 22, 0) 62%,
         rgb(78, 72, 85) 75%,
         rgba(206, 206, 230, 1) 93%,
         rgba(252, 252, 255, 1) 100%
@@ -1360,21 +1364,25 @@ body.dark-mode .far-circle {
 }
 
 body.dark-mode .btn {
-    background-color: #420f60;
-    color: #ffffff;
+    background-color: rgba(206, 206, 230, 1) 93%;
+    color: rgba(36, 36, 0, 1) 62%;
+}
+
+body.dark-mode .contact-btn {
+    background-color: rgba(206, 206, 230, 1) 93%;
+    color: rgba(36, 36, 0, 1) 62%;
 }
 
 body.dark-mode .btn:hover {
-    background-color: #cecee6;
-    /* color: var(--black); */
+    background-color: rgba(72, 72, 85, 1) 75%;
 }
 
 body.dark-mode a {
-    color: #fcf9ff;
+    color: rgba(24, 24, 54, 1) 6%;
 }
 
 body.dark-mode a:hover {
-    color: #fff;
+    color: #242400;
 }
 
 body.dark-mode .dark-mode-toggle .moon {
