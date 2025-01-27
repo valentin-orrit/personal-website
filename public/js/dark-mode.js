@@ -7,17 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.toggle('dark-mode', isDark)
         localStorage.setItem('darkMode', isDark ? 'enabled' : null)
 
-        if (isDark) {
-            profilePicture.style.filter = 'none'
-        } else {
-            profilePicture.style.filter = 'invert(1)'
+        if (profilePicture) {
+            profilePicture.style.filter = isDark ? 'none' : 'invert(1)'
         }
     }
 
     const isDarkModeEnabled = localStorage.getItem('darkMode') === 'enabled'
     setDarkMode(isDarkModeEnabled)
 
-    darkModeToggle.addEventListener('click', () => {
-        setDarkMode(!body.classList.contains('dark-mode'))
-    })
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!body.classList.contains('dark-mode'))
+        })
+    }
 })
+
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode')
+}
