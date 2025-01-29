@@ -1,6 +1,6 @@
 {
     "en": {
-        "welcome": "🖐️ hello!",
+        "welcome": "hello!",
         "name": "I am Valentin,",
         "dev": "full stack developer",
         "projects": "projects",
@@ -10,7 +10,7 @@
         "super-secret-samples-description": "[Work In Progress] SAAS Remix app of high quality audio samples to download for professional music producers."
     },
     "fr": {
-        "welcome": "🖐️ hello!",
+        "welcome": "hello!",
         "name": "je suis Valentin,",
         "dev": "développeur full stack",
         "projects": "projets",
