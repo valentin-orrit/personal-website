@@ -1,28 +1,12 @@
 {
     "en": {
-        "title": "contact",
-        "description": "A question about your project? Just want to say hello? Hit me up and I will get back to you quickly.",
-        "name": "name",
-        "name-placeholder": "name",
-        "email": "email",
-        "email-placeholder": "email address",
-        "subject": "subject",
-        "subject-placeholder": "subject",
-        "message": "message",
-        "message-placeholder": "say hello !",
-        "send-btn": "send"
+        "skills-title": "my skills",
+        "skills-db": "database",
+        "skills-dev-tools": "development tools"
     },
     "fr": {
-        "title": "contact",
-        "description": "Une question concernant votre projet ? Un simple bonjour ? Ecrivez-moi et je reviendrai vers vous rapidement.",
-        "name": "nom",
-        "name-placeholder": "nom",
-        "email": "email",
-        "email-placeholder": "email",
-        "subject": "objet",
-        "subject-placeholder": "objet",
-        "message": "message",
-        "message-placeholder": "dites bonjour !",
-        "send-btn": "envoyer"
+        "skills-title": "mes compétences",
+        "skills-db": "base de données",
+        "skills-dev-tools": "outils de développement"
     }
 }
