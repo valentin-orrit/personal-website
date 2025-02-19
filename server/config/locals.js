@@ -78,6 +78,11 @@ const locals = {
         description:
             '[Work In Progress] SAAS Remix app of high quality audio samples to download for professional music producers.',
     },
+    skills: {
+        pageName: 'skills',
+        title: 'skills - valentin orrit',
+        description: 'List of my skills as a full-stack developper.',
+    },
 
     // Get individual locals for each log entry
     getLogLocals: function (data) {

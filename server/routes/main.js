@@ -200,4 +200,13 @@ router.get('/super-secret-samples', (req, res) => {
     })
 })
 
+/**
+ * GET /skills
+ */
+router.get('/skills', (req, res) => {
+    res.render('skills', {
+        locals: locals.skills,
+    })
+})
+
 module.exports = router
