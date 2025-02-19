@@ -2,11 +2,11 @@
     "en": {
         "skills-title": "my skills",
         "skills-db": "database",
-        "skills-dev-tools": "development tools"
+        "skills-dev-tools": "tools"
     },
     "fr": {
         "skills-title": "mes compétences",
-        "skills-db": "base de données",
-        "skills-dev-tools": "outils de développement"
+        "skills-db": "database",
+        "skills-dev-tools": "outils"
     }
 }
