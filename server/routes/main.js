@@ -201,6 +201,15 @@ router.get('/super-secret-samples', (req, res) => {
 })
 
 /**
+ * GET /chante!
+ */
+router.get('/chante', (req, res) => {
+    res.render('projects/chante', {
+        locals: locals.chante,
+    })
+})
+
+/**
  * GET /skills
  */
 router.get('/skills', (req, res) => {

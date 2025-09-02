@@ -78,6 +78,12 @@ const locals = {
         description:
             '[Work In Progress] SAAS Remix app of high quality audio samples to download for professional music producers.',
     },
+    chante: {
+        pageName: 'chante',
+        title: 'chante! - valentin orrit',
+        description:
+            'Custom Directus extensions. User Interfaces for the control of servers and show management states for an immersive interactive Karaoke experience.',
+    },
     skills: {
         pageName: 'skills',
         title: 'skills - valentin orrit',
