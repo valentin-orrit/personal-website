@@ -16,7 +16,7 @@
     "galaxies-description": "Représentation 3D de galaxies en threejs, adapté d'un exercice de la formation threejs journey de Bruno Simon",
     "culture-shuffle-description": "Application de quiz culture faite avec React, utilisant Open Trivia API pour proposer des questions sur la musique, le cinéma, les arts classiques et la littérature.",
     "eat-around-description": "App Full-stack React et Nodejs conçue pour aider les utilisateurs à découvrir et à liker des établissements de restauration adaptés aux cuisines végétarienne, vegan, sans gluten, sans lactose, halal et casher, y compris les restaurants, boulangeries et cafés à proximité.",
-    "super-secret-samples-description": "[Work In Progress] App Full-stack de bibliothèque de samples audio destinée aux producteurs de musique professionnels.",
+    "super-secret-samples-description": "App Full-stack de bibliothèque de samples audio destinée aux producteurs de musique professionnels.",
     "chante-description": "Custom Directus extensions. Interfaces Utilisateurs pour le controle de l'état de serveurs et de la régie pour une expérience immersive de Karaoké interactif."
   }
 }
