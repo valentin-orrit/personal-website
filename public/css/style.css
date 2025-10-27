@@ -1366,14 +1366,16 @@ h4 {
     padding-right: 15px;
   }
 
-  .footer {
-    flex-direction: row;
-    padding: 0 20rem;
-  }
-
   h4 {
     display: block;
   }
+}
+
+@media only screen and (min-width: 1164px) {
+    .footer {
+        flex-direction: row;
+        padding: 0 20rem;
+    }
 }
 
 /* 
